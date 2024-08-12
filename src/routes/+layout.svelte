@@ -1,10 +1,8 @@
 <svelte:head>
 	<title>Virtel Project | Full Control</title>
-	<meta name="description">
-		Fastest, the most secure and safe virtual enviroment. We call it the operating system. 
+	<meta name="description" content="Fastest, the most secure and safe virtual enviroment. We call it the operating system. 
 		Best suited for mathematical calculations, home use, development or deployment of applications and servers, 
-		though can be used for any purpose.
-	</meta>
+		though can be used for any purpose.">
 	<meta name="google-site-verification" content="E6ni2ZbK0IHj84kPBZ7Tw7_9iZn_QbpW7TNQMa8IPX0" />
 </svelte:head>
 
