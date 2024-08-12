@@ -37,8 +37,8 @@
 	  <nav
 		class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
 	  >
-		<a href="##" class="flex items-center gap-2 text-lg font-semibold md:text-base">
-		  <Package2 class="h-6 w-6" />
+		<a href="/" class="flex items-center gap-2 text-lg font-semibold md:text-base mr-10">
+		  <img src="/favicon.png" alt="Logo" class="h-8 w-8" />
 		  <span>Virtel</span>
 		</a>
 		<a href="/" class="text-foreground hover:text-foreground transition-colors">
@@ -72,8 +72,8 @@
 		<Sheet.Content side="left">
 		  <nav class="grid gap-6 text-lg font-medium">
 			<a href="##" class="flex items-center gap-2 text-lg font-semibold">
-			  <Package2 class="h-6 w-6" />
-			  <span>Virtel</span>
+				<img src="/favicon.png" alt="Virtel Logo" class="h-8 w-8" />
+				<span>Virtel</span>
 			</a>
 			<a href="/" class="hover:text-foreground"> Home </a>
 			<a href="/download" class="text-muted-foreground hover:text-foreground"> Download </a>
