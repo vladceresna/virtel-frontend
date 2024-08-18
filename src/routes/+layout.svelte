@@ -26,9 +26,12 @@
 	import * as Table from "$lib/components/ui/table/index.js";
 	import { ModeWatcher } from "mode-watcher";
 	import ModeToggle from "$lib/components/mode-toggle.svelte";
+	import { Toaster } from "$lib/components/ui/sonner";
+
 </script>
 
   <ModeWatcher />
+  <Toaster />
 
   <div class="flex min-h-screen w-full flex-col">
 	<header class="bg-background sticky top-0 flex h-16 items-center gap-4 border-b px-4 md:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/60 z-50 backdrop-blur">
@@ -39,7 +42,7 @@
 		  <img src="/favicon.png" alt="Logo" class="h-8 w-8" />
 		  <span>Virtel</span>
 		</a>
-		<a href="/" class="text-foreground hover:text-foreground transition-colors">
+		<a href="/" class="text-muted-foreground hover:text-foreground transition-colors">
 		  Home
 		</a>
 		<a href="/download" class="text-muted-foreground hover:text-foreground transition-colors">
@@ -73,7 +76,7 @@
 				<img src="/favicon.png" alt="Virtel Logo" class="h-8 w-8" />
 				<span>Virtel</span>
 			</a>
-			<a href="/" class="hover:text-foreground"> Home </a>
+			<a href="/" class="text-muted-foreground hover:text-foreground"> Home </a>
 			<a href="/download" class="text-muted-foreground hover:text-foreground"> Download </a>
 			<a href="/docs" class="text-muted-foreground hover:text-foreground"> Docs </a>
 			<a href="/skills" class="text-muted-foreground hover:text-foreground"> Skills </a>

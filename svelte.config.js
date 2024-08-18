@@ -15,6 +15,9 @@ const config = {
 		alias: {
 			"@/*": "./path/to/lib/*",
 		}
+	},
+	optimizeDeps: {
+		exclude: ['svelte-sonner']
 	}
 };
 
