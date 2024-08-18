@@ -51,7 +51,7 @@
       <Card.Description>{skill.description}</Card.Description>
     </Card.Header>
     <Card.Content>
-        <div class="font-mono bg-stone-800 px-3 py-2 rounded-2xl border">
+        <div class="font-mono dark:bg-stone-800 bg-stone-200 px-3 py-2 rounded-2xl border">
             {skill.code}
 		</div>
     </Card.Content>
