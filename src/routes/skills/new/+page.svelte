@@ -14,6 +14,8 @@
     let code = "";
     let authorEmail = "";
 
+    let creation = false;
+
     const createSkill = async () => {
         if (name.length < 3 || description.length < 20 || code.length < 8 || authorEmail.length < 5) {
             console.log(name+" "+description+" "+code+" "+authorEmail);
@@ -22,10 +24,11 @@
                 description: "Please, add more info about your Skill"
             });
         } else {
+            creation = true;
             const res = await axios.post(
                 "https://virtel-backend.onrender.com/skill?name="+name+
                 "&description="+description+
-                "&code="+code+
+                "&code="+code.toString()+
                 "&authorEmail="+authorEmail
             )
             .then(response => {
@@ -36,7 +39,7 @@
                 description = "";
                 code = "";
                 authorEmail = "";
-                redirect(308,'/skills')
+                creation = false;
             })
             .catch(error => {
                 if(error.response.status === 200) {
@@ -47,10 +50,13 @@
                     });
                     console.error(error)
                 }
+                creation = false;
             });
+            
         }
     };
-
+    
+    $:console.log(name+" "+description+" "+code+" "+authorEmail);
 
 </script>
 
@@ -82,7 +88,7 @@
                     </div>
                     <div class="flex flex-col space-y-1.5">
                         <Label for="code">Code</Label>
-                        <Textarea bind:value={code} id="code" placeholder='sys out "Hello world!"' />
+                        <Textarea bind:value={code} id="code" placeholder='sys out "Hello world!"' class="whitespace-break-spaces break-words" />
                     </div>
                     <div class="flex flex-col space-y-1.5">
                         <Label for="authorEmail">Email</Label>
@@ -99,7 +105,7 @@
                     {/if}
                     {" "}{authorEmail}
                 </p>
-                <Button on:click={createSkill}>
+                <Button on:click={createSkill} bind:disabled={creation}>
                     Create
                 </Button>
             </Card.Footer>

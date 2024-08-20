@@ -96,6 +96,7 @@
 		  </div>
 		</form>
 		<ModeToggle/>
+		<!--
 		<DropdownMenu.Root>
 		  <DropdownMenu.Trigger asChild let:builder>
 			<Button
@@ -117,10 +118,17 @@
 			<DropdownMenu.Item>Logout</DropdownMenu.Item>
 		  </DropdownMenu.Content>
 		</DropdownMenu.Root>
+		-->
 	  </div>
 	</header>
 	<main class="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
 		<slot/>
 	</main>
+	<footer class="p-10">
+		<p class="text-muted-foreground text-sm">
+			Built & designed by <a class="border-b" href="https://vladceresna.netlify.app/">vladceresna</a>. 
+			The source code is available on <a class="border-b" href="https://github.com/vladceresna/virtel">GitHub</a>.
+		</p>
+	</footer>
   </div>
   

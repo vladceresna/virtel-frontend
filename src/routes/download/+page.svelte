@@ -1,247 +1,75 @@
 <script lang="ts">
-    import Activity from "lucide-svelte/icons/activity";
-	import ArrowUpRight from "lucide-svelte/icons/arrow-up-right";
-	import CircleUser from "lucide-svelte/icons/circle-user";
-	import CreditCard from "lucide-svelte/icons/credit-card";
-	import DollarSign from "lucide-svelte/icons/dollar-sign";
-	import Menu from "lucide-svelte/icons/menu";
-	import Package2 from "lucide-svelte/icons/package-2";
-	import Search from "lucide-svelte/icons/search";
-	import Users from "lucide-svelte/icons/users";
-  
-	import * as Avatar from "$lib/components/ui/avatar/index.js";
-	import { Badge } from "$lib/components/ui/badge/index.js";
-	import { Button } from "$lib/components/ui/button/index.js";
-	import * as Card from "$lib/components/ui/card/index.js";
-	import * as DropdownMenu from "$lib/components/ui/dropdown-menu/index.js";
-	import { Input } from "$lib/components/ui/input/index.js";
-	import * as Sheet from "$lib/components/ui/sheet/index.js";
-	import * as Table from "$lib/components/ui/table/index.js";
+  import { Button } from "$lib/components/ui/button";
+  import Terminal from "lucide-svelte/icons/terminal";
+  import * as Alert from "$lib/components/ui/alert/index.js";
+  import GitCommitHorizontal from "lucide-svelte/icons/git-commit-horizontal";
+  import MemoryStick from "lucide-svelte/icons/memory-stick";
+  import * as Avatar from "$lib/components/ui/avatar/index.js";
+  import * as HoverCard from "$lib/components/ui/hover-card/index.js";
 </script>
-   
 
-<div class="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
-    <Card.Root>
-      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-        <Card.Title class="text-sm font-medium">Total Revenue</Card.Title>
-        <DollarSign class="text-muted-foreground h-4 w-4" />
-      </Card.Header>
-      <Card.Content>
-        <div class="text-2xl font-bold">$45,231.89</div>
-        <p class="text-muted-foreground text-xs">+20.1% from last month</p>
-      </Card.Content>
-    </Card.Root>
-    <Card.Root>
-      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-        <Card.Title class="text-sm font-medium">Subscriptions</Card.Title>
-        <Users class="text-muted-foreground h-4 w-4" />
-      </Card.Header>
-      <Card.Content>
-        <div class="text-2xl font-bold">+2350</div>
-        <p class="text-muted-foreground text-xs">+180.1% from last month</p>
-      </Card.Content>
-    </Card.Root>
-    <Card.Root>
-      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-        <Card.Title class="text-sm font-medium">Sales</Card.Title>
-        <CreditCard class="text-muted-foreground h-4 w-4" />
-      </Card.Header>
-      <Card.Content>
-        <div class="text-2xl font-bold">+12,234</div>
-        <p class="text-muted-foreground text-xs">+19% from last month</p>
-      </Card.Content>
-    </Card.Root>
-    <Card.Root>
-      <Card.Header class="flex flex-row items-center justify-between space-y-0 pb-2">
-        <Card.Title class="text-sm font-medium">Active Now</Card.Title>
-        <Activity class="text-muted-foreground h-4 w-4" />
-      </Card.Header>
-      <Card.Content>
-        <div class="text-2xl font-bold">+573</div>
-        <p class="text-muted-foreground text-xs">+201 since last hour</p>
-      </Card.Content>
-    </Card.Root>
+<div class="text-center gap-5 py-12 flex flex-wrap flex-col">
+  <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+    Download Virtel
+  </h1>
+  <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
+      In future for every platform. Open Source.
+      <br>
+      Your best virtual enviroment
+  </h4>
+</div>
+<div class="md:flex">
+  <div class="md:flex-1 w-full p-5 text-center">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Windows</h3>
+    <div class="justify-center">
+      
+      <HoverCard.Root>
+        <HoverCard.Trigger>
+          <Button href="https://github.com/vladceresna/virtel/releases/download/0.1.2/virtel-0.1.2.exe" class="mr-2">
+            Download
+          </Button>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex place-items-center gap-2 w-fit">
+            <Avatar.Root class="flex-1">
+              <Avatar.Image src="/favicon.png" />
+              <Avatar.Fallback>VT</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="flex-1 flex-col flex gap-1">
+              <div class="text-lg font-semibold whitespace-nowrap">Latest version</div>
+              <div class="flex gap-2">
+                <GitCommitHorizontal class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  0.1.2
+                </small>
+                <MemoryStick class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  1.27 MB
+                </small>
+              </div>
+            </div>
+        </HoverCard.Content>
+      </HoverCard.Root>
+      <Button href="https://github.com/vladceresna/virtel/releases" variant="secondary">
+        See releases
+      </Button>
+    </div>
   </div>
-  <div class="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
-    <Card.Root class="xl:col-span-2">
-      <Card.Header class="flex flex-row items-center">
-        <div class="grid gap-2">
-          <Card.Title>Transactions</Card.Title>
-          <Card.Description>Recent transactions from your store.</Card.Description>
-        </div>
-        <Button href="##" size="sm" class="ml-auto gap-1">
-          View All
-          <ArrowUpRight class="h-4 w-4" />
-        </Button>
-      </Card.Header>
-      <Card.Content>
-        <Table.Root>
-          <Table.Header>
-            <Table.Row>
-              <Table.Head>Customer</Table.Head>
-              <Table.Head class="xl:table.-column hidden">Type</Table.Head>
-              <Table.Head class="xl:table.-column hidden">Status</Table.Head>
-              <Table.Head class="xl:table.-column hidden">Date</Table.Head>
-              <Table.Head class="text-right">Amount</Table.Head>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body>
-            <Table.Row>
-              <Table.Cell>
-                <div class="font-medium">Liam Johnson</div>
-                <div class="text-muted-foreground hidden text-sm md:inline">
-                  liam@example.com
-                </div>
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">Sale</Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                <Badge class="text-xs" variant="outline">Approved</Badge>
-              </Table.Cell>
-              <Table.Cell
-                class="md:table.-cell xl:table.-column hidden lg:hidden"
-              >
-                2023-06-23
-              </Table.Cell>
-              <Table.Cell class="text-right">$250.00</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <div class="font-medium">Olivia Smith</div>
-                <div class="text-muted-foreground hidden text-sm md:inline">
-                  olivia@example.com
-                </div>
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">Refund</Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                <Badge class="text-xs" variant="outline">Declined</Badge>
-              </Table.Cell>
-              <Table.Cell
-                class="md:table.-cell xl:table.-column hidden lg:hidden"
-              >
-                2023-06-24
-              </Table.Cell>
-              <Table.Cell class="text-right">$150.00</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <div class="font-medium">Noah Williams</div>
-                <div class="text-muted-foreground hidden text-sm md:inline">
-                  noah@example.com
-                </div>
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                Subscription
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                <Badge class="text-xs" variant="outline">Approved</Badge>
-              </Table.Cell>
-              <Table.Cell
-                class="md:table.-cell xl:table.-column hidden lg:hidden"
-              >
-                2023-06-25
-              </Table.Cell>
-              <Table.Cell class="text-right">$350.00</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <div class="font-medium">Emma Brown</div>
-                <div class="text-muted-foreground hidden text-sm md:inline">
-                  emma@example.com
-                </div>
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">Sale</Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                <Badge class="text-xs" variant="outline">Approved</Badge>
-              </Table.Cell>
-              <Table.Cell
-                class="md:table.-cell xl:table.-column hidden lg:hidden"
-              >
-                2023-06-26
-              </Table.Cell>
-              <Table.Cell class="text-right">$450.00</Table.Cell>
-            </Table.Row>
-            <Table.Row>
-              <Table.Cell>
-                <div class="font-medium">Liam Johnson</div>
-                <div class="text-muted-foreground hidden text-sm md:inline">
-                  liam@example.com
-                </div>
-              </Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">Sale</Table.Cell>
-              <Table.Cell class="xl:table.-column hidden">
-                <Badge class="text-xs" variant="outline">Approved</Badge>
-              </Table.Cell>
-              <Table.Cell
-                class="md:table.-cell xl:table.-column hidden lg:hidden"
-              >
-                2023-06-27
-              </Table.Cell>
-              <Table.Cell class="text-right">$550.00</Table.Cell>
-            </Table.Row>
-          </Table.Body>
-        </Table.Root>
-      </Card.Content>
-    </Card.Root>
-    <Card.Root>
-      <Card.Header>
-        <Card.Title>Recent Sales</Card.Title>
-      </Card.Header>
-      <Card.Content class="grid gap-8">
-        <div class="flex items-center gap-4">
-          <Avatar.Root class="hidden h-9 w-9 sm:flex">
-            <Avatar.Image src="/avatars/01.png" alt="Avatar" />
-            <Avatar.Fallback>OM</Avatar.Fallback>
-          </Avatar.Root>
-          <div class="grid gap-1">
-            <p class="text-sm font-medium leading-none">Olivia Martin</p>
-            <p class="text-muted-foreground text-sm">olivia.martin@email.com</p>
-          </div>
-          <div class="ml-auto font-medium">+$1,999.00</div>
-        </div>
-        <div class="flex items-center gap-4">
-          <Avatar.Root class="hidden h-9 w-9 sm:flex">
-            <Avatar.Image src="/avatars/02.png" alt="Avatar" />
-            <Avatar.Fallback>JL</Avatar.Fallback>
-          </Avatar.Root>
-          <div class="grid gap-1">
-            <p class="text-sm font-medium leading-none">Jackson Lee</p>
-            <p class="text-muted-foreground text-sm">jackson.lee@email.com</p>
-          </div>
-          <div class="ml-auto font-medium">+$39.00</div>
-        </div>
-        <div class="flex items-center gap-4">
-          <Avatar.Root class="hidden h-9 w-9 sm:flex">
-            <Avatar.Image src="/avatars/03.png" alt="Avatar" />
-            <Avatar.Fallback>IN</Avatar.Fallback>
-          </Avatar.Root>
-          <div class="grid gap-1">
-            <p class="text-sm font-medium leading-none">Isabella Nguyen</p>
-            <p class="text-muted-foreground text-sm">isabella.nguyen@email.com</p>
-          </div>
-          <div class="ml-auto font-medium">+$299.00</div>
-        </div>
-        <div class="flex items-center gap-4">
-          <Avatar.Root class="hidden h-9 w-9 sm:flex">
-            <Avatar.Image src="/avatars/04.png" alt="Avatar" />
-            <Avatar.Fallback>WK</Avatar.Fallback>
-          </Avatar.Root>
-          <div class="grid gap-1">
-            <p class="text-sm font-medium leading-none">William Kim</p>
-            <p class="text-muted-foreground text-sm">will@email.com</p>
-          </div>
-          <div class="ml-auto font-medium">+$99.00</div>
-        </div>
-        <div class="flex items-center gap-4">
-          <Avatar.Root class="hidden h-9 w-9 sm:flex">
-            <Avatar.Image src="/avatars/05.png" alt="Avatar" />
-            <Avatar.Fallback>SD</Avatar.Fallback>
-          </Avatar.Root>
-          <div class="grid gap-1">
-            <p class="text-sm font-medium leading-none">Sofia Davis</p>
-            <p class="text-muted-foreground text-sm">sofia.davis@email.com</p>
-          </div>
-          <div class="ml-auto font-medium">+$39.00</div>
-        </div>
-      </Card.Content>
-    </Card.Root>
+  <div class="md:flex-1 w-full p-5 text-center">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Linux</h3>
+    <p class="text-muted-foreground text-sm">Support will be added soon</p>
   </div>
+  <div class="md:flex-1 w-full p-5 text-center">
+    <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Android</h3>
+    <p class="text-muted-foreground text-sm">Support will be added soon</p>
+  </div>
+  
+
+</div>
+<Alert.Root>
+  <Terminal class="h-4 w-4" />
+  <Alert.Title>Virtel now is in Alpha version</Alert.Title>
+  <Alert.Description>
+    Please use this with caution. But you are welcome to test Virtel. 
+    If you see bugs, feel free to contact me by email or create a problem on the github repository
+  </Alert.Description>
+</Alert.Root>
