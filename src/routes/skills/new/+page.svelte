@@ -26,10 +26,12 @@
         } else {
             creation = true;
             const res = await axios.post(
-                "https://virtel-backend.onrender.com/skill?name="+name+
-                "&description="+description+
-                "&code="+code.toString()+
-                "&authorEmail="+authorEmail
+                "https://virtel-backend.onrender.com/skill",{
+                    name,
+                    description,
+                    code,
+                    authorEmail
+                }
             )
             .then(response => {
                 toast.success("Skill created", {
