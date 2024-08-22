@@ -23,7 +23,7 @@
         Your best virtual enviroment
     </h4>
     <div class="justify-center align-center">
-        <Button href="https://github.com/vladceresna/virtel/releases/latest" class="mr-2">Get Started</Button>
+        <Button href="/docs/installing" class="mr-2">Get Started</Button>
         <Button href="/docs" variant="outline">Learn More</Button>
     </div>
     
