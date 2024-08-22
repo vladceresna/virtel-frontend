@@ -4,13 +4,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import * as Card from '$lib/components/ui/card';
 	import Heart from 'lucide-svelte/icons/heart';
-	import Trash from 'lucide-svelte/icons/trash';
 	import { mediaQuery } from 'svelte-legos';
-	import * as Dialog from '$lib/components/ui/dialog/index.js';
-	import * as Drawer from '$lib/components/ui/drawer/index.js';
-	import { Input } from '$lib/components/ui/input/index.js';
-	import { Label } from '$lib/components/ui/label/index.js';
-	import { toast } from 'svelte-sonner';
 	import { Skeleton } from '$lib/components/ui/skeleton';
 
 	let open = false;
@@ -38,7 +32,7 @@
 		<br />
 		Copy & Paste in your Steps files
 	</h4>
-	<div class="align-center justify-center">
+	<div class="justify-center">
 		<Button href="/skills/new" class="mr-2">Add Your Own</Button>
 		<Button href="/docs" variant="outline">Learn More</Button>
 	</div>
@@ -88,10 +82,38 @@
                     {`...`}
                 </div>
 			</Card.Content>
-			<Card.Footer class="flex justify-between">
+			<Card.Footer class="flex justify-between items-center">
 				<p class="text-muted-foreground text-sm mr-4">{skill.authorEmail}</p>
-				<div>
-					<Button href={`/skills/${skill.id}`}>
+				<div class="flex items-center">
+					<Button class="mr-2" variant="outline" on:click={async ()=> {
+                        let item = localStorage.getItem("liked");
+                        
+                        if (item) {
+                            let arr = JSON.parse(item);
+                            if (arr.includes(skill.id)) {
+                                
+                            } else {
+                                arr.push(skill.id);
+                                const res = await axios
+                                    .post("https://virtel-backend.onrender.com/skill/like?id="+skill.id)
+                                    .then((response) => response.data)
+                                    .catch((error) => console.error(error));
+                                skill = res;
+                            }
+                            localStorage.setItem("liked", JSON.stringify(arr));
+                        } else {
+                            localStorage.setItem("liked", JSON.stringify([skill.id]));
+                            const res = await axios
+                                    .post("https://virtel-backend.onrender.com/skill/like?id="+skill.id)
+                                    .then((response) => response.data)
+                                    .catch((error) => console.error(error));
+                            skill = res;
+                        }
+                    }}>
+                        <Heart class="mr-2 h-4 w-4" />
+                        Like: {skill.likes}
+					</Button>
+                    <Button href={`/skills/${skill.id}`}>
                         View
 					</Button>
 				</div>
