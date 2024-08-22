@@ -42,6 +42,7 @@
 		"axios": "^1.7.4",
 		"bits-ui": "^0.21.13",
 		"clsx": "^2.1.1",
+		"layerchart": "^0.44.0",
 		"lucide-svelte": "^0.427.0",
 		"mode-watcher": "^0.4.1",
 		"svelte-legos": "^0.2.4",
