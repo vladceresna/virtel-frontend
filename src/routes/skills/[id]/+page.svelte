@@ -9,6 +9,7 @@
 	import { mediaQuery } from 'svelte-legos';
 	import * as Dialog from '$lib/components/ui/dialog/index.js';
 	import * as Drawer from '$lib/components/ui/drawer/index.js';
+    import { Skeleton } from '$lib/components/ui/skeleton';
     
     import { Input } from "$lib/components/ui/input/index.js";
     import { Label } from "$lib/components/ui/label/index.js";
@@ -126,7 +127,62 @@
 		<Button href="/docs" variant="outline">Learn More</Button>
 	</div>
 </div>
-{#if isLoaded}{:else}
+{#if isLoaded}
+<Card.Root class="flex flex-auto flex-col">
+    <Card.Header>
+        <Card.Title><Skeleton class="h-4 w-1/4" /></Card.Title>
+        <Card.Description><Skeleton class="h-4 w-1/3" /></Card.Description>
+    </Card.Header>
+    <Card.Content class="flex-1">
+        <div class="whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
+            <Skeleton class="h-32 w-full" />
+        </div>
+    </Card.Content>
+    <Card.Footer class="flex justify-between">
+        <Skeleton class="h-4 w-2/5" />
+        <div>
+            <Button class="mr-2" variant="outline">
+                <Skeleton class="h-4 w-8" />
+            </Button>
+            <Button class="ml-4" variant="destructive" size="icon">
+                <Skeleton class="h-4 w-4" />
+            </Button>
+            
+        </div>
+    </Card.Footer>
+</Card.Root>
+<div class="flex flex-col">
+    <Card.Root class="my-2 mr-auto">
+        <Card.Header class="py-2">
+            <Card.Description><Skeleton class="h-4 w-2/5" /></Card.Description>
+            <Card.Title class="text-md"><Skeleton class="h-10 w-4/5" /></Card.Title>
+        </Card.Header>
+    </Card.Root>
+    <Card.Root class="my-2 mr-auto">
+        <Card.Header class="py-2">
+            <Card.Description><Skeleton class="h-4 w-2/5" /></Card.Description>
+            <Card.Title class="text-md"><Skeleton class="h-10 w-4/5" /></Card.Title>
+        </Card.Header>
+    </Card.Root>
+</div>
+    <Card.Root class="text-left w-full">
+        <Card.Content class="mt-6">
+            <div class="grid w-full items-center gap-4">
+                <div class="flex flex-col space-y-1.5">
+                    <Skeleton class="h-16 w-full" />
+                </div>
+            </div>
+        </Card.Content>
+        <Card.Footer >
+            <div class="flex flex-row w-full">
+                <Skeleton class="h-16 w-full flex-1 mr-2" />
+                <Button>
+                    <Skeleton class="h-4 h-8" />
+                </Button>
+            </div>
+        </Card.Footer>
+    </Card.Root>
+{:else}
 	<Card.Root class="flex flex-auto flex-col">
 		<Card.Header>
 			<Card.Title>{skill.name}</Card.Title>

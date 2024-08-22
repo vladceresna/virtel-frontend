@@ -28,6 +28,8 @@
 	import ModeToggle from "$lib/components/mode-toggle.svelte";
 	import { Toaster } from "$lib/components/ui/sonner";
 
+	let searchQuery = "";
+
 </script>
 
   <ModeWatcher />
@@ -92,6 +94,11 @@
 			  type="search"
 			  placeholder="Search skills..."
 			  class="pl-8 sm:w-[300px] md:w-[200px] lg:w-[300px]"
+			  bind:value={searchQuery} on:keydown={(e) => {
+				if (e.key === 'Enter') {
+					javascript:location.href = '/skills/search/'+searchQuery;
+				}
+			  }}
 			/>
 		  </div>
 		</form>

@@ -7,17 +7,17 @@
 	import { mediaQuery } from 'svelte-legos';
 	import { Skeleton } from '$lib/components/ui/skeleton';
     import SkeletonSkill from '$lib/components/SkeletonSkill.svelte';
-
-	let open = false;
-	const isDesktop = mediaQuery('(min-width: 768px)');
+    import { page } from '$app/stores';
 
 	let skillsList: any = [];
+    let query = $page.params.query;
 
     let isLoaded = false;
+    
 
 	onMount(async () => {
 		const res = await axios
-			.get('https://virtel-backend.onrender.com/skills/all')
+			.get('https://virtel-backend.onrender.com/skills/query?query='+query)
 			.then((response) => response.data)
 			.catch((error) => console.error(error));
 		skillsList = res;
@@ -27,8 +27,10 @@
 </script>
 
 <div class="grid grid-cols-1 gap-5 py-12 text-center">
-	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Virtel Skills</h1>
+	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">Search Skills</h1>
 	<h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
+        Search by "{query}"
+        <br/>
 		Get started with ready parts of Steps code. Simple. Open Source.
 		<br />
 		Copy & Paste in your Steps files
