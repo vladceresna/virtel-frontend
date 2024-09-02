@@ -25,7 +25,7 @@
       
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/0.1.2/virtel-0.1.2.exe" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/0.1.4/virtel-0.1.4.exe" class="mr-2">
             Download
           </Button>
         </HoverCard.Trigger>
