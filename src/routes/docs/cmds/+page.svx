@@ -70,7 +70,7 @@ Here's a list of commands in the specified format:
 ### **file** Module
 
 * **file write** `<path>` `<content>`: Writes content to a file.
-* **file get** `<path>` `<content>`: Reads content from a file.
+* **file get** `<path>` `<result>`: Reads content from a file.
 * **file del** `<path>`: Deletes a file.
 * **file exists** `<path>` `<result>`: Checks if a file exists.
 
@@ -82,6 +82,6 @@ Here's a list of commands in the specified format:
 
 ### **run** Module
 
-* **run one** `<command>`: Executes a single command.
-* **run if** `<condition>` `<command1>` `<command2>`: Executes a command conditionally.
-* **run while** `<condition>` `<command>`: Executes a command in a loop.
+* **run one** `<file from bin>`: Executes a single command.
+* **run if** `<condition>` `<file from bin>` `<file from bin>`: Executes a command conditionally.
+* **run while** `<condition>` `<file from bin>`: Executes a command in a loop.
