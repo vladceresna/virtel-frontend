@@ -39,11 +39,11 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  0.1.2
+                  0.1.4
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  1.27 MB
+                  1.3 MB
                 </small>
               </div>
             </div>
