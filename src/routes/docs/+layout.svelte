@@ -12,7 +12,8 @@
             <a href="/docs" class="text-primary font-semibold"> Getting Started </a>
             <a href="/docs">Introduction</a>
             <a href="/docs/installing">Installing</a>
-            <a href="/docs/modules" class="text-primary font-semibold">Modules</a>
+            <a href="/docs/steps" class="text-primary font-semibold">Steps Overview</a>
+            <a href="/docs/cmds">Commands</a>
         </nav>
     </ScrollArea>
     <div class="md:col-span-3">

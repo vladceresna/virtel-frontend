@@ -1,0 +1,87 @@
+**Understanding the Structure**
+
+* **`sys`:** This is the root module that coordinates the execution of commands within other submodules.
+* **`var`:** Manages variables.
+* **`math`:** Performs mathematical operations.
+* **`str`:** Handles string operations.
+* **`dir`:** Works with directories.
+* **`file`:** Operates on files.
+* **`bool`:** Performs Boolean operations.
+* **`run`:** Executes commands conditionally or in loops.
+
+
+
+
+**Command Structure**
+
+The general structure of commands within this module is:
+
+```
+<Module> <Command> <Arguments>
+```
+
+## Command List
+
+Here's a list of commands in the specified format:
+
+### **sys** Module
+
+* **sys out** `<message>`: Prints a message to the console.
+* **sys in** `<input>`: Reads input from the user.
+
+### **var** Module
+
+* **var set** `<name>` `<value>`: Sets the value of a variable.
+* **var del** `<name>`: Deletes a variable.
+
+### **math** Module
+
+* **math plus** `<num1>` `<num2>` `<result>`: Adds two numbers.
+* **math min** `<num1>` `<num2>` `<result>`: Finds the minimum of two numbers.
+* **math mult** `<num1>` `<num2>` `<result>`: Multiplies two numbers.
+* **math div** `<num1>` `<num2>` `<result>`: Divides two numbers.
+* **math exp** `<base>` `<exponent>` `<result>`: Raises a number to a power.
+* **math root** `<number>` `<root>` `<result>`: Calculates the root of a number.
+* **math mod** `<dividend>` `<divisor>` `<result>`: Calculates the remainder of division.
+* **math floor** `<number>` `<result>`: Rounds a number down to the nearest integer.
+* **math incr** `<variable>`: Increments a variable by 1.
+* **math decr** `<variable>`: Decrements a variable by 1.
+* **math eq** `<num1>` `<num2>` `<result>`: Checks if two numbers are equal.
+* **math neq** `<num1>` `<num2>` `<result>`: Checks if two numbers are not equal.
+* **math lg** `<num1>` `<num2>` `<result>`: Performs a logical greater than operation.
+* **math sm** `<num1>` `<num2>` `<result>`: Performs a logical smaller than operation.
+* **math lgeq** `<num1>` `<num2>` `<result>`: Performs a logical greater than or equal to operation.
+* **math smeq** `<num1>` `<num2>` `<result>`: Performs a logical smaller than or equal to operation.
+
+### **str** Module
+
+* **str plus** `<str1>` `<str2>` `<result>`: Concatenates two strings.
+* **str cut** `<str>` `<start>` `<end>` `<result>`: Extracts a substring from a string.
+* **str len** `<str>` `<result>`: Calculates the length of a string.
+* **str eq** `<str1>` `<str2>` `<result>`: Checks if two strings are equal.
+* **str neq** `<str1>` `<str2>` `<result>`: Checks if two strings are not equal.
+
+### **dir** Module
+
+* **dir new** `<path>`: Creates a new directory.
+* **dir del** `<path>`: Deletes a directory.
+* **dir exists** `<path>` `<result>`: Checks if a directory exists.
+
+### **file** Module
+
+* **file write** `<path>` `<content>`: Writes content to a file.
+* **file get** `<path>` `<content>`: Reads content from a file.
+* **file del** `<path>`: Deletes a file.
+* **file exists** `<path>` `<result>`: Checks if a file exists.
+
+### **bool** Module
+
+* **bool and** `<bool1>` `<bool2>` `<result>`: Performs a logical AND operation.
+* **bool or** `<bool1>` `<bool2>` `<result>`: Performs a logical OR operation.
+* **bool not** `<bool>` `<result>`: Performs a logical NOT operation.
+
+### **run** Module
+
+* **run one** `<command>`: Executes a single command.
+* **run if** `<condition>` `<command1>` `<command2>`: Executes a command conditionally.
+* **run while** `<condition>` `<command>`: Executes a command in a loop.
