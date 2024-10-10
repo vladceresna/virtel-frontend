@@ -11,21 +11,7 @@ What is "Steps"?
 
 🛠️ List of currently available commands:
     <div class="my-5 whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
-    sys out /name of the variable or any text/
-var set /var name/ /var value/
-var get /var name/
-var del /name of the variable/
-bin run /name of the .steps script/
-math plus /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math min /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math mult /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math div /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math exp /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math root /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math mod /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math floor /num as text or var name/ /num as text or var name/ /name of the var to store the result/
-math incr /name of the var to increment/
-math decr /name of the var to decrement/
+    
     </div>
 </div>
 <div class="leading-7 [&:not(:first-child)]:mt-6 ">
@@ -38,11 +24,11 @@ Path of the file (may depend on the system): C:/Virtel/apps/vladceresna.virtel.l
 Script in start.steps:
 <div class="my-5 whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
 var set greet "Hello!";
-sys out greet;
+csl write greet;
 var set greet "Hi!";
-sys out greet;
+csl write greet;
 var del greet;
-sys out greet;
+csl write greet;
 bin run run.steps;
 </div>
 Script in run.steps:
@@ -57,8 +43,8 @@ Steps Code:
 <div class="my-5 whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
 var set a 5;
 var set b 5;
-math plus a b c;
-sys out c;
+mat plus a b c;
+csl write c;
 </div>
 Output of the code:
 <div class="my-5 whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
@@ -66,7 +52,7 @@ Output of the code:
 </div>
 Here's another mathematical example showing the root command:
 <div class="my-5 whitespace-break-spaces rounded-2xl border bg-stone-200 px-3 py-2 font-mono dark:bg-stone-800">
-math root "27" "3" c;
+mat root "27" "3" c;
 sys out c;
 </div>
 Outputs:

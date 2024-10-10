@@ -9,10 +9,11 @@
   <div class="mx-auto w-full max-w-6xl gap-2 grid md:grid-cols-5 ">
     <ScrollArea class="h-[350px] md:col-span-1">
         <nav class="text-muted-foreground grid gap-4 text-sm">
-            <a href="/docs" class="text-primary font-semibold"> Getting Started </a>
+            <a href="/docs" class="text-primary font-semibold">Getting Started</a>
             <a href="/docs">Introduction</a>
             <a href="/docs/installing">Installing</a>
-            <a href="/docs/steps" class="text-primary font-semibold">Steps Overview</a>
+            <a href="/docs/steps" class="text-primary font-semibold">Developing</a>
+            <a href="/docs/steps">Steps overview</a>
             <a href="/docs/cmds">Commands</a>
         </nav>
     </ScrollArea>

@@ -31,8 +31,8 @@
         <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://kit.svelte.dev/">
             Svelte
         </a>
-        <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://www.rust-lang.org/">
-            Rust
+        <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://www.jetbrains.com/compose-multiplatform/">
+            Compose Multiplatform
         </a>
         <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://spring.io/">
             Spring

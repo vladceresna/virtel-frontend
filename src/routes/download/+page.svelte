@@ -13,20 +13,25 @@
     Download Virtel
   </h1>
   <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
-      In future for every platform. Open Source.
+      For every platform. Open Source.
       <br>
       Your best virtual enviroment
   </h4>
+  <div>
+    <Button href="https://github.com/vladceresna/virtel/releases" variant="outline">
+      See releases
+    </Button>
+  </div>
 </div>
 <div class="md:flex">
   <div class="md:flex-1 w-full p-5 text-center">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Windows</h3>
-    <div class="justify-center">
-      
+    <div class="justify-center"> 
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/0.1.4/virtel-0.1.4.exe" class="mr-2">
-            Download
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.0.0/com.vladceresna.virtel-1.0.0-windows.msi" 
+          class="mr-2" variant="secondary">
+            Download MSI
           </Button>
         </HoverCard.Trigger>
         <HoverCard.Content class="flex place-items-center gap-2 w-fit">
@@ -39,28 +44,134 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  0.1.4
+                  1.0.0
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  1.3 MB
+                  62.3 MB
                 </small>
               </div>
             </div>
         </HoverCard.Content>
       </HoverCard.Root>
-      <Button href="https://github.com/vladceresna/virtel/releases" variant="secondary">
-        See releases
-      </Button>
+      <HoverCard.Root>
+        <HoverCard.Trigger>
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.0.0/com.vladceresna.virtel-1.0.0-windows.exe" class="mr-2">
+            Download EXE
+          </Button>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex place-items-center gap-2 w-fit">
+            <Avatar.Root class="flex-1">
+              <Avatar.Image src="/favicon.png" />
+              <Avatar.Fallback>VT</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="flex-1 flex-col flex gap-1">
+              <div class="text-lg font-semibold whitespace-nowrap">Latest version</div>
+              <div class="flex gap-2">
+                <GitCommitHorizontal class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  1.0.0
+                </small>
+                <MemoryStick class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  62.9 MB
+                </small>
+              </div>
+            </div>
+        </HoverCard.Content>
+      </HoverCard.Root>
     </div>
   </div>
   <div class="md:flex-1 w-full p-5 text-center">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Linux</h3>
-    <p class="text-muted-foreground text-sm">Support will be added soon</p>
+    <div class="justify-center">
+      
+      <HoverCard.Root>
+        <HoverCard.Trigger>
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.0.0/com.vladceresna.virtel-1.0.0-linux.deb" class="mr-2">
+            Download DEB
+          </Button>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex place-items-center gap-2 w-fit">
+            <Avatar.Root class="flex-1">
+              <Avatar.Image src="/favicon.png" />
+              <Avatar.Fallback>VT</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="flex-1 flex-col flex gap-1">
+              <div class="text-lg font-semibold whitespace-nowrap">Latest version</div>
+              <div class="flex gap-2">
+                <GitCommitHorizontal class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  1.0.0
+                </small>
+                <MemoryStick class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  59.4 MB
+                </small>
+              </div>
+            </div>
+        </HoverCard.Content>
+      </HoverCard.Root>
+    </div>
   </div>
   <div class="md:flex-1 w-full p-5 text-center">
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight p-5">Android</h3>
-    <p class="text-muted-foreground text-sm">Support will be added soon</p>
+    <div class="justify-center">
+      
+      <HoverCard.Root>
+        <HoverCard.Trigger>
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.0.0/com.vladceresna.virtel-1.0.0-android.apk" class="mr-2">
+            Download APK
+          </Button>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex place-items-center gap-2 w-fit">
+            <Avatar.Root class="flex-1">
+              <Avatar.Image src="/favicon.png" />
+              <Avatar.Fallback>VT</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="flex-1 flex-col flex gap-1">
+              <div class="text-lg font-semibold whitespace-nowrap">Latest version</div>
+              <div class="flex gap-2">
+                <GitCommitHorizontal class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  1.0.0
+                </small>
+                <MemoryStick class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  8.22 MB
+                </small>
+              </div>
+            </div>
+        </HoverCard.Content>
+      </HoverCard.Root>
+      <HoverCard.Root>
+        <HoverCard.Trigger>
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.0.0/com.vladceresna.virtel-1.0.0-android.aab" 
+          class="mr-2" variant="secondary">
+            Download AAB
+          </Button>
+        </HoverCard.Trigger>
+        <HoverCard.Content class="flex place-items-center gap-2 w-fit">
+            <Avatar.Root class="flex-1">
+              <Avatar.Image src="/favicon.png" />
+              <Avatar.Fallback>VT</Avatar.Fallback>
+            </Avatar.Root>
+            <div class="flex-1 flex-col flex gap-1">
+              <div class="text-lg font-semibold whitespace-nowrap">Latest version</div>
+              <div class="flex gap-2">
+                <GitCommitHorizontal class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  1.0.0
+                </small>
+                <MemoryStick class="h-4 w-4" />
+                <small class="text-sm font-medium leading-none whitespace-nowrap">
+                  7.97 MB
+                </small>
+              </div>
+            </div>
+        </HoverCard.Content>
+      </HoverCard.Root>
+    </div>
   </div>
   
 

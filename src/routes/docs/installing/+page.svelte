@@ -7,13 +7,11 @@
     We recommend downloading the <b>latest</b> version.
 </p>
 <p class="leading-7 [&:not(:first-child)]:mt-6">
-	For Windows<br>
-    Create directories: C:/Virtel/apps/vladceresna.virtel.launcher/bin/ .
-    Now, in bin folder create file start.steps. It will be start point of your launcher.
+	Launch it application and it will be downloads and runs starts apps - launcher and installer other apps
 </p>
 <p class="leading-7 [&:not(:first-child)]:mt-6">
-    Write code in it file. For example <a href="http://localhost:5173/skills/d704777c-da86-47dc-91fc-292b99471502">Hello world!</a>)
-    Its only 1 line of simple code! Then run it Virtel exe file. Please, skip all security checks)
+    Write your code in /virtel/0/programs/your.app.id/code/ dir and starts in "start.steps". For example <a href="/skills/d704777c-da86-47dc-91fc-292b99471502">Hello world!</a>)
+    Its only 1 line of simple code! Then run it Virtel application, maybe even from console. Please, skip all security checks)
     <br>
     Then see in logs your result!
     <br>
