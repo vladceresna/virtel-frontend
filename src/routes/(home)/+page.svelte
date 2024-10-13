@@ -20,6 +20,9 @@
     </div>
     
 </div>
+<video controls="true" autoplay="true" name="media" class="mx-10 rounded-2xl border">
+    <source src="http://localhost:5173/linux-virtel-preview.webm" type="video/webm">
+</video>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
