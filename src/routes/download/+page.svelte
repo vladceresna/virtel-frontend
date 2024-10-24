@@ -47,7 +47,7 @@
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  63.0 MB
+                  73.0 MB
                 </small>
               </div>
             </div>
@@ -79,7 +79,7 @@
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  59.4 MB
+                  64 MB
                 </small>
               </div>
             </div>
@@ -111,7 +111,7 @@
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  8.22 MB
+                  18 MB
                 </small>
               </div>
             </div>
