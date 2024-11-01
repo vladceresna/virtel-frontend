@@ -29,7 +29,7 @@
     <div class="justify-center"> 
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.1/com.vladceresna.virtel-1.2.1-windows.exe" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.2/com.vladceresna.virtel-1.2.2-windows.exe" class="mr-2">
             Download EXE
           </Button>
         </HoverCard.Trigger>
@@ -43,7 +43,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  1.2.1
+                  1.2.2
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
@@ -61,7 +61,7 @@
       
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.1/com.vladceresna.virtel-1.2.1-linux.deb" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.2/com.vladceresna.virtel-1.2.2-linux.deb" class="mr-2">
             Download DEB
           </Button>
         </HoverCard.Trigger>
@@ -75,7 +75,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  1.2.1
+                  1.2.2
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
@@ -93,7 +93,7 @@
       
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.1/com.vladceresna.virtel-1.2.1-android.apk" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/1.2.2/com.vladceresna.virtel-1.2.2-android.apk" class="mr-2">
             Download APK
           </Button>
         </HoverCard.Trigger>
@@ -107,7 +107,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  1.2.1
+                  1.2.2
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
