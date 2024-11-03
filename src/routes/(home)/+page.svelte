@@ -5,12 +5,11 @@
 
 <div class="text-center grid gap-5 grid-cols-1 py-12 ">
     <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-      Welcome to Virtel Project
+      Virtel Project<br>
+      Operating System. Redefined
     </h1>
     <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
-        New reality. Speed. Secure. Cross platform. Simple. Open Source.
-        <br>
-        The idea of describing only what affects
+        New reality. Speed. Secure. Cross-platform. Just. Open Source.
         <br>
         Your best virtual enviroment
     </h4>
