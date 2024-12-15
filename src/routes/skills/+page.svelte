@@ -37,7 +37,15 @@
 		<Button href="/skills/new" class="mr-2">Add Your Own</Button>
 		<Button href="/docs" variant="outline">Learn More</Button>
 	</div>
+	{#if !isLoaded}
+		<h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
+		Loading (Server is launching may be). Please wait... 
+		<br />
+		This may be in range from 1 minute to 10 minutes
+		</h4>
+	{/if}
 </div>
+
 
 <div class="flex flex-wrap gap-4 w-full">
 	{#if !isLoaded}
