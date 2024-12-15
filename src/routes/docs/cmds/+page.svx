@@ -1,13 +1,13 @@
 **Understanding the Structure**
 
-* **`sys`:** This is the root module that coordinates the execution of commands within other submodules.
-* **`var`:** Manages variables.
-* **`math`:** Performs mathematical operations.
-* **`str`:** Handles string operations.
-* **`dir`:** Works with directories.
-* **`file`:** Operates on files.
-* **`bool`:** Performs Boolean operations.
-* **`run`:** Executes commands conditionally or in loops.
+- **`sys`:** This is the root module that coordinates the execution of commands within other submodules.
+- **`var`:** Manages variables.
+- **`math`:** Performs mathematical operations.
+- **`str`:** Handles string operations.
+- **`dir`:** Works with directories.
+- **`file`:** Operates on files.
+- **`bool`:** Performs Boolean operations.
+- **`run`:** Executes commands conditionally or in loops.
 
 
 

@@ -5,7 +5,7 @@
 
 <div class="text-center grid gap-5 grid-cols-1 py-12 ">
     <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-      Virtel Project<br>
+      Virtel Project.<br>
       Operating System. Redefined
     </h1>
     <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
@@ -19,7 +19,7 @@
     </div>
     
 </div>
-<video controls="true" autoplay="true" name="media" class="mx-10 rounded-2xl border">
+<video controls autoplay name="media" class="mx-10 rounded-2xl border">
     <source src="/linux-virtel-preview.webm" type="video/webm">
 </video>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
@@ -34,7 +34,7 @@
             </div>
         </Card.Content>
         <Card.Footer>
-            <Button href="/docs/modules">Learn more about Steps</Button>
+            <Button href="/docs/cmds">Learn more about Steps</Button>
         </Card.Footer>
     </Card.Root>
     <div class="flex-1 w-full justify-center align-middle border rounded-lg">
