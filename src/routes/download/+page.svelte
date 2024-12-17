@@ -134,7 +134,7 @@
 
 <div class="text-center gap-5 py-12 flex flex-wrap flex-col">
   <h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-    Check our new 2.0.0-alpha version!
+    Check our new 2.0.1-alpha version!
   </h1>
   <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
     For trying this alpha version you need to install <br>
@@ -150,7 +150,7 @@
     <div class="justify-center">
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.0-alpha/com.vladceresna.virtel-2.0.0.exe" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.1-alpha/com.vladceresna.virtel-2.0.1.exe" class="mr-2">
             Download EXE
           </Button>
         </HoverCard.Trigger>
@@ -164,7 +164,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  2.0.0-alpha
+                  2.0.1-alpha
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
@@ -182,7 +182,7 @@
 
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.0-alpha/com.vladceresna.virtel_2.0.0_amd64.deb" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.1-alpha/com.vladceresna.virtel_2.0.1_amd64.deb" class="mr-2">
             Download DEB
           </Button>
         </HoverCard.Trigger>
@@ -196,7 +196,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  2.0.0-alpha
+                  2.0.1-alpha
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
@@ -214,7 +214,7 @@
 
       <HoverCard.Root>
         <HoverCard.Trigger>
-          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.0-alpha/composeApp-release.apk" class="mr-2">
+          <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.1-alpha/composeApp-release.apk" class="mr-2">
             Download APK
           </Button>
         </HoverCard.Trigger>
@@ -228,7 +228,7 @@
               <div class="flex gap-2">
                 <GitCommitHorizontal class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
-                  2.0.0-alpha
+                  2.0.1-alpha
                 </small>
                 <MemoryStick class="h-4 w-4" />
                 <small class="text-sm font-medium leading-none whitespace-nowrap">
@@ -240,15 +240,16 @@
       </HoverCard.Root>
     </div>
   </div>
-  <div class="text-center gap-5 py-12 flex flex-wrap flex-col">
+  
+
+</div>
+<div class="text-center gap-5 py-12 flex flex-wrap flex-col">
     <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
       Attached Archive virtel/0/programs/ directory
     </h4>
     <div>
-      <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.0-alpha/programs.zip" variant="secondary">
+      <Button href="https://github.com/vladceresna/virtel/releases/download/2.0.1-alpha/programs.zip" variant="secondary">
         Download ZIP
       </Button>
     </div>
   </div>
-
-</div>
