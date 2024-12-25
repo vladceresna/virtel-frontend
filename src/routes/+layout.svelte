@@ -36,7 +36,16 @@
   <Toaster />
 
   <div class="flex min-h-screen w-full flex-col">
-	<header class="bg-background sticky top-0 flex h-16 items-center gap-4 border-b px-4 md:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/60 z-50 backdrop-blur">
+	<div class="sticky top-0 z-50">
+	<div class="bg-primary p-2 flex items-center gap-4 border-b px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur"
+	>
+		<h4 class="leading-7 [&:not(:first-child)]:mt-6 font-bold w-full text-white">
+			28.12.2024 Yoohoo! Join the first конференції Virtel Conf 2024.2 
+			on our Discord Server in Ukrainian language!
+		</h4>
+		<a href="https://discord.gg/hNSyTvuy2v" class="leading-7 font-bold text-white border-2 border-white px-3 rounded-md">Join!</a>
+	</div>
+	<header class="bg-background sticky flex h-16 items-center gap-4 border-b px-4 md:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur">
 	  <nav
 		class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
 	  >
@@ -128,6 +137,8 @@
 		-->
 	  </div>
 	</header>
+	</div>
+	
 	<main class="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
 		<slot/>
 	</main>
