@@ -19,9 +19,12 @@
     </div>
     
 </div>
-<video controls autoplay name="media" class="mx-10 rounded-2xl border">
-    <source src="/linux-virtel-preview.webm" type="video/webm">
-</video>
+<iframe class="mx-10 rounded-2xl border md:h-[30rem]"
+src="https://www.youtube.com/embed/88I7QsRG0v8?si=t131GGXnhHGaqphF" 
+title="YouTube video player" frameborder="0" 
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+</iframe>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
@@ -57,6 +60,9 @@
     </div>
 
 </div>
+<video controls autoplay name="media" class="mx-10 rounded-2xl border">
+    <source src="/linux-virtel-preview.webm" type="video/webm">
+</video>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
