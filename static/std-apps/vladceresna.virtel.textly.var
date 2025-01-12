@@ -1,0 +1,43 @@
+
+[/buttonOpenViewClick.steps]
+
+scr get path inputPathView "value";
+fls read path content;
+scr set inputFileEditView "value" content;
+
+[/saveFile.steps]
+
+scr get path inputPathView "value";
+scr get content inputFileEditView "value";
+fls write path content;
+
+[/start.steps]
+
+csl write "Virtel Textly started";
+
+scr new columnView "column" "0" "max/max" root;
+
+scr new topPanelView "column" "0" "max/min" columnView;
+
+scr new inputPathView "input" "0" "max/min" topPanelView;
+scr set inputPathView "title" "Path";
+
+scr new buttonOpenView "button" "0" "max/min" topPanelView;
+scr set buttonOpenView "onClick" "/buttonOpenViewClick.steps";
+scr new textOnButtonOpenView "text" "0" "max/min" buttonOpenView;
+scr set textOnButtonOpenView "title" "Open";
+
+scr new buttonSaveView "button" "0" "max/min" columnView;
+scr set buttonSaveView "onClick" "/saveFile.steps";
+scr new textOnButtonSaveView "text" "0" "max/min" buttonSaveView;
+scr set textOnButtonSaveView "title" "Save";
+
+scr new inputFileEditView "input" "0" "max/max" columnView;
+scr set inputFileEditView "title" "Content Edit";
+
+
+
+
+
+
+[end]

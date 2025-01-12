@@ -1,0 +1,191 @@
+[/b0.steps]
+str add result "0" result;
+run one "/updres.steps";
+[/b1.steps]
+str add result "1" result;
+run one "/updres.steps";
+[/b2.steps]
+str add result "2" result;
+run one "/updres.steps";
+[/b3.steps]
+str add result "3" result;
+run one "/updres.steps";
+[/b4.steps]
+str add result "4" result;
+run one "/updres.steps";
+[/b5.steps]
+str add result "5" result;
+run one "/updres.steps";
+[/b6.steps]
+str add result "6" result;
+run one "/updres.steps";
+[/b7.steps]
+str add result "7" result;
+run one "/updres.steps";
+[/b8.steps]
+str add result "8" result;
+run one "/updres.steps";
+[/b9.steps]
+str add result "9" result;
+run one "/updres.steps";
+[/bback.steps]
+str len result resultLen;
+mat minus resultLen "1" resultLen;
+str cut "0" resultLen result result;
+run one "/updres.steps";
+[/bdiv.steps]
+var set "/" action;
+str add result action result;
+
+run one "/updres.steps";
+[/bminus.steps]
+var set "-" action;
+str add result action result;
+
+run one "/updres.steps";
+[/bmult.steps]
+var set "*" action;
+str add result action result;
+
+run one "/updres.steps";
+[/bplus.steps]
+var set "+" action;
+str add result action result;
+
+run one "/updres.steps";
+[/bres.steps]
+str split action result resultList;
+
+str eqs action "+" cond;
+run if cond "/plus.steps";
+str eqs action "-" cond;
+run if cond "/minus.steps";
+str eqs action "*" cond;
+run if cond "/mult.steps";
+str eqs action "/" cond;
+run if cond "/div.steps";
+
+
+
+
+run one "/updres.steps";
+[/div.steps]
+lst get resultList "0" first;
+lst get resultList "1" second;
+mat div first second result;
+[/minus.steps]
+lst get resultList "0" first;
+lst get resultList "1" second;
+mat minus first second result;
+[/mult.steps]
+lst get resultList "0" first;
+lst get resultList "1" second;
+mat mult first second result;
+[/plus.steps]
+lst get resultList "0" first;
+lst get resultList "1" second;
+mat plus first second result;
+[/start.steps]
+var set "" action;
+var set "" result;
+
+scr new column "column" "0" "max/max" root;
+scr new title "text" "0" "max/min" column;
+scr set title "title" "Calculator";
+scr set title "variant" "primary";
+
+scr new tablep "row" "0" "max/max" column;
+
+scr new table "column" "1" "min/min" tablep;
+
+scr new row1 "row" "1" "max/min" table;
+scr new resultView "text" "0" "max/min" row1;
+run one "/updres.steps";
+scr set resultView "padding" "30";
+
+scr new row2 "row" "0" "max/min" table;
+scr new button1 "button" "1" "max/min" row2;
+scr new button1Text "text" "0" "min/min" button1;
+scr set button1Text "title" "1";
+scr set button1 "onClick" "/b1.steps";
+scr new button2 "button" "1" "max/min" row2;
+scr new button2Text "text" "0" "min/min" button2;
+scr set button2Text "title" "2";
+scr set button2 "onClick" "/b2.steps";
+scr new button3 "button" "1" "max/min" row2;
+scr new button3Text "text" "0" "min/min" button3;
+scr set button3Text "title" "3";
+scr set button3 "onClick" "/b3.steps";
+
+scr new row3 "row" "0" "max/min" table;
+scr new button4 "button" "1" "max/min" row3;
+scr new button4Text "text" "0" "min/min" button4;
+scr set button4Text "title" "4";
+scr set button4 "onClick" "/b4.steps";
+scr new button5 "button" "1" "max/min" row3;
+scr new button5Text "text" "0" "min/min" button5;
+scr set button5Text "title" "5";
+scr set button5 "onClick" "/b5.steps";
+scr new button6 "button" "1" "max/min" row3;
+scr new button6Text "text" "0" "min/min" button6;
+scr set button6Text "title" "6";
+scr set button6 "onClick" "/b6.steps";
+
+scr new row4 "row" "0" "max/min" table;
+scr new button7 "button" "1" "max/min" row4;
+scr new button7Text "text" "0" "min/min" button7;
+scr set button7Text "title" "7";
+scr set button7 "onClick" "/b7.steps";
+scr new button8 "button" "1" "max/min" row4;
+scr new button8Text "text" "0" "min/min" button8;
+scr set button8Text "title" "8";
+scr set button8 "onClick" "/b8.steps";
+scr new button9 "button" "1" "max/min" row4;
+scr new button9Text "text" "0" "min/min" button9;
+scr set button9Text "title" "9";
+scr set button9 "onClick" "/b9.steps";
+
+scr new row5 "row" "0" "max/min" table;
+scr new button0 "button" "1" "max/min" row5;
+scr new button0Text "text" "0" "min/min" button0;
+scr set button0Text "title" "0";
+scr set button0 "onClick" "/b0.steps";
+
+
+
+
+scr new columna "column" "0" "min/min" tablep;
+
+scr new button<- "button" "0" "min/min" columna;
+scr new button<-Text "text" "0" "min/min" button<-;
+scr set button<-Text "title" "<-";
+scr set button<- "onClick" "/bback.steps";
+
+scr new button+ "button" "0" "min/min" columna;
+scr new button+Text "text" "0" "min/min" button+;
+scr set button+Text "title" "+";
+scr set button+ "onClick" "/bplus.steps";
+
+scr new button- "button" "0" "min/min" columna;
+scr new button-Text "text" "0" "min/min" button-;
+scr set button-Text "title" "-";
+scr set button- "onClick" "/bminus.steps";
+
+scr new button* "button" "0" "min/min" columna;
+scr new button*Text "text" "0" "min/min" button*;
+scr set button*Text "title" "*";
+scr set button* "onClick" "/bmult.steps";
+
+scr new button/ "button" "0" "min/min" columna;
+scr new button/Text "text" "0" "min/min" button/;
+scr set button/Text "title" "/";
+scr set button/ "onClick" "/bdiv.steps";
+
+scr new button= "button" "0" "min/min" columna;
+scr new button=Text "text" "0" "min/min" button=;
+scr set button=Text "title" "=";
+scr set button= "onClick" "/bres.steps";
+[/updres.steps]
+scr set resultView "title" result;
+csl write result;
+[end]

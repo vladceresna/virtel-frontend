@@ -1,0 +1,16 @@
+
+[/slash.steps]
+sys flowname flowname;
+str add "vladceresna.virtel.argserver-" flowname temp;
+str add temp "-parameters-name" temp;
+
+var get temp name;
+
+str add "Hello, " name slashres;
+[/start.steps]
+srv new "8081" server;
+srv add "get" "/{name}" "/slash.steps" slashres server;
+srv run server;
+scr new text "text" "0" "min/min" root;
+scr set text "title" "Server runned. http://localhost:8081/{name}";
+[end]
