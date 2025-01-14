@@ -37,13 +37,14 @@
 
   <div class="flex min-h-screen w-full flex-col">
 	<div class="sticky top-0 z-50">
-	<div class="bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
+	<div class="justify-center bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
 	>
-		<h4 class="leading-0 [&:not(:first-child)]:mt-6 font-bold w-full text-white">
-			28.12.2024 Yoohoo! Join the first conference Virtel Conf 2024.2 
-			on our Discord Server in Ukrainian language!
+		<h4 class="leading-0 font-bold text-white">
+			Meet Virtel Cedrus 2.3.x! Complex, Dashboard and Rust.
 		</h4>
-		<a href="https://discord.gg/hNSyTvuy2v" class="leading-7 font-bold text-white border-2 border-white px-2 rounded-md md:w-auto w-full md:text-auto text-center">Join!</a>
+		<Button href="/download" variant="outline" class="p-3 h-7">
+			Download
+		</Button>
 	</div>
 	<header class="bg-background sticky flex h-16 items-center gap-4 border-b px-4 md:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur">
 	  <nav

@@ -14,8 +14,8 @@
         Your best virtual enviroment
     </h4>
     <div class="justify-center align-center">
-        <Button href="/docs/installing" class="mr-2">Get Started</Button>
-        <Button href="/docs" variant="outline">Learn More</Button>
+        <Button href="/docs/installing" class="m-1">Get Started</Button>
+        <Button href="/docs" class="m-1" variant="outline">Learn More</Button>
     </div>
     
 </div>
