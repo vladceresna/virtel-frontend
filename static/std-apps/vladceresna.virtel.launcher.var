@@ -1,0 +1,146 @@
+
+[/backclick.steps]
+
+sys start "vladceresna.virtel.launcher";
+
+[/buttonShutdownOnClick.steps]
+scr new column "column" "-1" "max/min" root;
+[/buttonThemeOnClick.steps]
+str eqs theme "dark" isDark;
+bln not isDark isNotDark;
+run if isDark "/setLightTheme.steps";
+run if isNotDark "/setDarkTheme.steps";
+[/buttonViewOnClick.steps]
+
+scr page "";
+scr get inputViewValue inputView "value";
+sys start inputViewValue;
+
+[/homeclick.steps]
+
+sys start "vladceresna.virtel.launcher";
+
+[/installAll.steps]
+
+sys homedir homedir;
+str add homedir "/programs/" programsdir;
+
+var set "vladceresna.virtel.installer" installProgramAppId;
+var set "https://drive.usercontent.google.com/u/0/uc?id=1VHOQHR9heNkj6-7G5hzlGqQVniebJf4m&export=download" installProgramUrl;
+run one "/installProgram.steps";
+var set "vladceresna.virtel.packager" installProgramAppId;
+var set "https://drive.usercontent.google.com/u/0/uc?id=1yXyrvSanrr4Ia5MhPa6AfSVB508InL6a&export=download" installProgramUrl;
+run one "/installProgram.steps";
+var set "vladceresna.virtel.textly" installProgramAppId;
+var set "https://drive.usercontent.google.com/u/0/uc?id=19XAFZW5DJwERPXeXBj2ISK6Lij4PLQcS&export=download" installProgramUrl;
+run one "/installProgram.steps";
+
+[/installProgram.steps]
+
+str add programsdir installProgramAppId installProgramPath;
+str add installProgramPath "/code/" installerdir;
+fls xst installerdir installerxst;
+bln not installerxst installerNotXst;
+run if installerNotXst "/installer.steps";
+
+gets installProgramAppId installProgramUrl
+
+[/installer.steps]
+
+clt req "get" installProgramUrl "" installerStatus installerBody;
+fls dir installerdir;
+sys install installProgramAppId installerBody;
+
+[/page.steps]
+scr page "1";
+
+[/setDarkTheme.steps]
+var set "dark" theme;
+scr theme theme;
+[/setLightTheme.steps]
+var set "light" theme;
+scr theme theme;
+[/settingsclick.steps]
+
+sys start "vladceresna.virtel.settings";
+
+[/start.steps]
+
+csl write "Virtel Launcher started";
+
+run one "/installAll.steps";
+
+scr nav "/homeclick.steps" "home";
+scr nav "/backclick.steps" "back";
+
+sys apps appsList;
+lst var appsList appsStr;
+
+scr new column "column" "0" "max/max" root;
+
+
+
+var set "dark" theme;
+
+scr new cardNav "card" "0" "max/min" column;
+
+scr new adaptiveLayout "row" "0" "max/min" cardNav;
+scr set adaptiveLayout "align" "end";
+scr set adaptiveLayout "justify" "end";
+
+scr new buttonTheme "button" "0" "min/min" adaptiveLayout;
+scr set buttonTheme "onClick" "/buttonThemeOnClick.steps";
+scr set buttonTheme "variant" "primary";
+scr new buttonTextTheme "text" "0" "min/min" buttonTheme;
+scr set buttonTextTheme "title" "ReTheme";
+
+scr new buttonShutdown "button" "0" "min/min" adaptiveLayout;
+scr set buttonShutdown "onClick" "/buttonShutdownOnClick.steps";
+scr set buttonShutdown "variant" "primary";
+scr new buttonTextShutdown "text" "0" "min/min" buttonShutdown;
+scr set buttonTextShutdown "title" "Shutdown";
+
+
+
+
+scr new card "card" "1" "max/min" column;
+scr new columnApps "column" "0" "max/min" card;
+scr new titleText "text" "0" "max/min" columnApps;
+scr set titleText "variant" "primary";
+scr set titleText "title" "Welcome in Virtel";
+scr new appsText "text" "0" "max/min" columnApps;
+
+str add "Use Virtel on Android, Windows and Linux!)
+https://virtel.netlify.app/
+https://discord.gg/hNSyTvuy2v
+Input in field below AppID of app, which want to run.
+Installed programs AppIDs: " appsStr appsTextText;
+scr set appsText "title" appsTextText;
+
+
+scr new cardInput "card" "0" "min/min" column;
+
+scr new adaptive "adaptive" "0" "max/min" cardInput;
+scr set adaptive "align" "end";
+scr set adaptive "justify" "end";
+
+scr new inputView "input" "1" "max/min" adaptive;
+scr set inputView "title" "AppID";
+scr set inputView "justify" "center";
+scr set inputView "align" "center";
+
+scr new submit "column" "0" "min/min" adaptive;
+scr set submit "paddingLeft" "10";
+scr set submit "paddingTop" "5";
+scr set submit "paddingBottom" "5";
+scr set submit "justify" "center";
+scr set submit "align" "center";
+scr new buttonView "button" "0" "min/min" submit;
+scr set buttonView "onClick" "/buttonViewOnClick.steps";
+scr set buttonView "variant" "primary";
+scr new buttonTextView "text" "0" "min/min" buttonView;
+scr set buttonTextView "title" "Run!";
+
+scr theme theme;
+
+[end]
