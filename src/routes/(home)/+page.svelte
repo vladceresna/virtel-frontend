@@ -60,7 +60,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </div>
 
 </div>
-<video controls autoplay name="media" class="mx-10 rounded-2xl border">
+<video controls autoplay name="media" class="mx-10 rounded-2xl border md:h-[30rem]">
     <source src="/linux-virtel-preview.webm" type="video/webm">
 </video>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
