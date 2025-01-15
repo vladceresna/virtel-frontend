@@ -26,13 +26,31 @@ sys homedir homedir;
 str add homedir "/programs/" programsdir;
 
 var set "vladceresna.virtel.installer" installProgramAppId;
-var set "https://drive.usercontent.google.com/u/0/uc?id=1VHOQHR9heNkj6-7G5hzlGqQVniebJf4m&export=download" installProgramUrl;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.installer.var" installProgramUrl;
 run one "/installProgram.steps";
+
 var set "vladceresna.virtel.packager" installProgramAppId;
-var set "https://drive.usercontent.google.com/u/0/uc?id=1yXyrvSanrr4Ia5MhPa6AfSVB508InL6a&export=download" installProgramUrl;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.packager.var" installProgramUrl;
 run one "/installProgram.steps";
+
 var set "vladceresna.virtel.textly" installProgramAppId;
-var set "https://drive.usercontent.google.com/u/0/uc?id=19XAFZW5DJwERPXeXBj2ISK6Lij4PLQcS&export=download" installProgramUrl;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.textly.var" installProgramUrl;
+run one "/installProgram.steps";
+
+var set "vladceresna.virtel.complex" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.complex.var" installProgramUrl;
+run one "/installProgram.steps";
+
+var set "vladceresna.virtel.argserver" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.argserver.var" installProgramUrl;
+run one "/installProgram.steps";
+
+var set "vladceresna.virtel.calculator" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.calculator.var" installProgramUrl;
+run one "/installProgram.steps";
+
+var set "vladceresna.virtel.helloclient" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/vladceresna.virtel.helloclient.var" installProgramUrl;
 run one "/installProgram.steps";
 
 [/installProgram.steps]
