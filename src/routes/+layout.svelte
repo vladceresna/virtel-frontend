@@ -36,21 +36,28 @@
   <Toaster />
 
   <div class="flex min-h-screen w-full flex-col">
-	<div class="sticky top-0 z-50">
-	<div class="justify-center bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
+	<div class="relative justify-center bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
 	>
 		<h4 class="leading-0 font-bold text-white">
 			Meet Virtel Cedrus 2.3.x! Complex, Dashboard and Rust.
 		</h4>
-		<Button href="/download" variant="outline" class="p-3 h-7">
+		<Button href="/download" variant="outline" class="p-3 h-7 rounded-sm">
 			Download
 		</Button>
 	</div>
+	<div class="sticky top-0 z-50">
+	
+	
+	
+	
+
+
+
 	<header class="bg-background sticky flex h-16 items-center gap-4 border-b px-4 md:px-6 bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur">
 	  <nav
 		class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
 	  >
-		<a href="/" class="flex items-center gap-2 text-lg font-semibold md:text-base mr-10">
+		<a href="/" class="notranslate flex items-center gap-2 text-lg font-semibold md:text-base mr-10">
 		  <img src="/favicon.png" alt="Logo" class="h-8 w-8" />
 		  <span>Virtel</span>
 		</a>
@@ -84,7 +91,7 @@
 		</Sheet.Trigger>
 		<Sheet.Content side="left">
 		  <nav class="grid gap-6 text-lg font-medium">
-			<a href="##" class="flex items-center gap-2 text-lg font-semibold">
+			<a href="##" class="notranslate flex items-center gap-2 text-lg font-semibold">
 				<img src="/favicon.png" alt="Virtel Logo" class="h-8 w-8" />
 				<span>Virtel</span>
 			</a>

@@ -25,19 +25,22 @@
         <Button href="https://github.com/vladceresna/virtel-frontend" class="m-2">It Backend Sources</Button>
     </div>
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
-        Made with
+        Made with and thanks for:
     </h3>
-    <div class="flex justify-center items-center gap-6">
-        <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://kit.svelte.dev/">
+        <Button class="mx-auto" href="https://kit.svelte.dev/">
             Svelte
-        </a>
-        <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://www.jetbrains.com/compose-multiplatform/">
-            Compose Multiplatform
-        </a>
-        <a class="scroll-m-20 text-xl font-semibold tracking-tight border-b" href="https://spring.io/">
+        </Button>
+        <Button class="mx-auto" href="https://www.jetbrains.com/compose-multiplatform/">
+            Compose 
+            Multiplatform
+        </Button>
+        <Button class="mx-auto" href="https://www.rust-lang.org/">
+            Rust
+        </Button>
+        <Button class="mx-auto" href="https://spring.io/">
             Spring
-        </a>
-    </div>
-    <Button class="mx-auto" variant="secondary" href="https://discord.gg/hNSyTvuy2v">Join our Discord Community)</Button>
+        </Button>
+    
+    <Button class="mx-auto" variant="secondary" href="https://discord.gg/hNSyTvuy2v">Join our Discord Community!</Button>
     
 </div>

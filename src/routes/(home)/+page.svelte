@@ -28,7 +28,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
-            <Card.Title class="text-3xl">Simplicity as you like)</Card.Title>
+            <Card.Title class="text-3xl">Simplicity as you like!</Card.Title>
             <Card.Description class="text-xl">It's so easy!</Card.Description>
         </Card.Header>
         <Card.Content>
@@ -48,7 +48,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
-            <Card.Title class="text-3xl">Ready parts of Steps code)</Card.Title>
+            <Card.Title class="text-3xl">Ready parts of Steps code!</Card.Title>
             <Card.Description class="text-xl">Learn Steps with Skills! Simple. Open Source.</Card.Description>
         </Card.Header>
         <Card.Footer>
@@ -66,7 +66,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
 <div class="flex md:flex-row flex-col justify-center align-middle place-content-center gap-10 p-10">
     <Card.Root class="flex-1 w-full justify-center align-middle border rounded-lg">
         <Card.Header>
-            <Card.Title class="text-3xl">Safe execution enviroment)</Card.Title>
+            <Card.Title class="text-3xl">Safe execution enviroment!</Card.Title>
             <Card.Description class="text-xl">Isolated. Open Source.<br>
                 Your powerful, safe and secure isolated crossplatform virtual environment
             </Card.Description>
