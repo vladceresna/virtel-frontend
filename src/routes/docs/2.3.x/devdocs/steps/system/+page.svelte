@@ -30,6 +30,42 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 <div class="flex flex-col gap-5 *:px-5 *:pb-5">
 
 
+
+    <Card>
+    <Oh3 class="notranslate">spr play</Oh3>
+    <Op>Plays an audio file with the specified path and type.</Op>
+    <CodeView>spr play (type) (path)</CodeView>
+    <Oul>
+        <li><Ocode>type</Ocode>: The audio file type ("mp3" or "wav").</li>
+        <li><Ocode>path</Ocode>: The path to the audio file. Can contain the special symbol `$`, which will be replaced with the system path.</li>
+    </Oul>
+    <CodeView>
+spr play "mp3" "$/music/song.mp3";
+    </CodeView>
+    <Op>
+        This example plays the "song.mp3" file from the "music" directory in MP3 format.
+    </Op>
+    </Card>
+    
+    <Card>
+    <Oh3 class="notranslate">llm ask</Oh3>
+    <Op>Gets an answer to a question or text.</Op>
+    <CodeView>llm ask (text) (newResVarName)</CodeView>
+    <Oul>
+        <li><Ocode>text</Ocode>: The text or question to process.</li>
+        <li><Ocode>newResVarName</Ocode>: The new variable to store the result.</li>
+    </Oul>
+    <CodeView>
+var set "Яка погода сьогодні?" question;
+llm ask question answer;
+csl write answer;
+    </CodeView>
+    <Op>
+        This example gets an answer to the question "Яка погода сьогодні?" and prints it to the console.
+    </Op>
+    </Card>
+
+
 	<Card>
     <Oh3 class="notranslate">tts say2</Oh3>
     <Op>Converts text to speech and plays it.</Op>

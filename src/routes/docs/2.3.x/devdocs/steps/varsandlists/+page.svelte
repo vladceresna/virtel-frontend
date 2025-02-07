@@ -13,17 +13,89 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 
 </script>
 <Oh1>Variables and Lists</Oh1>
-<Op>
-    This is work
-</Op>
 
-<Oh3>Example</Oh3>
+<Oh2>Variables: Storing Data</Oh2>
+<Op>Objective: Store simple data like text or numbers.</Op>
+
+<Op>Example:</Op>
 <CodeView>
-
+var set "Hello, World!" greeting;
+csl write greeting;
 </CodeView>
-<Op>
-    
-</Op>
+<Op>Result: Stores "Hello, World!" in the greeting variable and prints it to the console.</Op>
+
+<Oh2>Lists: Organizing Data</Oh2>
+<Op>Objective: Store collections of data in a list.</Op>
+
+<Op>Example:</Op>
+<CodeView>
+lst new myList;
+lst set myList "0" "First element";
+lst set myList "1" "Second element";
+lst var myList listStr;
+csl write listStr;
+</CodeView>
+<Op>Result: Creates a list myList, adds two elements, and prints the entire list as a string.</Op>
+
+<Oh2>References: Efficient Data Handling</Oh2>
+<Op>Objective: Create references to variables for quick access.</Op>
+
+<Op>Example:</Op>
+<CodeView>
+var set "Test" testVar;
+ref set testVar refTest;
+csl write refTest;
+</CodeView>
+<Op>Result: Creates a reference refTest to testVar and prints its value.</Op>
+
+<Oh2>Practical Example: Simple Text Editor</Oh2>
+<Op>Objective: Create a program that stores user input in a list.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Create a list:
+<CodeView>
+lst new messages;
+</CodeView></li>
+
+<li>Read user input:
+<CodeView>
+csl read message;
+</CodeView></li>
+
+<li>Add input to the list:
+<CodeView>
+lst set messages message;
+</CodeView></li>
+
+<li>Display the list:
+<CodeView>
+lst var messages messagesStr;
+csl write messagesStr;
+</CodeView></li>
+</Oul>
+
+<Oh2>Tip</Oh2>
+<Op>This allows you to store multiple messages and display them as a list.</Op>
+
+<Oh2>Conclusion</Oh2>
+<Op>Virtel Steps offers simple and convenient tools for working with data. 
+    Use variables for simple values, lists for collections of data, and references 
+    for efficient data handling. This enables you to create flexible and functional programs.</Op>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <Oh2>Commands</Oh2>
 <div class="h-5"></div>
 

@@ -13,17 +13,120 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 
 </script>
 <Oh1>Data</Oh1>
-<Op>
-    This is work
-</Op>
 
-<Oh3>Example</Oh3>
+
+<Op>Working with Strings, Math, and Boolean Operations in Virtel Steps</Op>
+
+<Oh2>String Operations</Oh2>
+<Op>String operations allow you to manipulate and analyze text data.</Op>
+
+<Oh3>Key Commands:</Oh3>
+<Oul>
+<li><Ocode>str cut</Ocode> - Extract a substring.</li>
+<li><Ocode>str add</Ocode> - Combine two strings.</li>
+<li><Ocode>str len</Ocode> - Get the length of a string.</li>
+<li><Ocode>str get</Ocode> - Get a character at a specific index.</li>
+<li><Ocode>str eqs</Ocode> - Check if two strings are equal.</li>
+<li><Ocode>str split</Ocode> - Split a string by a regular expression.</li>
+</Oul>
+
+<Op>Example: Splitting a String</Op>
 <CodeView>
-
+var set "a,b,c" listStr;
+str split "," listStr result;
+lst get result "0" result;
+csl write result;
 </CodeView>
-<Op>
-    
-</Op>
+<Op>Result: Outputs "a".</Op>
+
+<Oh2>Math Operations</Oh2>
+<Op>Math operations allow you to perform arithmetic and comparison operations.</Op>
+
+<Oh3>Key Commands:</Oh3>
+<Oul>
+<li><Ocode>mat plus</Ocode> - Add two numbers.</li>
+<li><Ocode>mat minus</Ocode> - Subtract two numbers.</li>
+<li><Ocode>mat mult</Ocode> - Multiply two numbers.</li>
+<li><Ocode>mat div</Ocode> - Divide two numbers.</li>
+<li><Ocode>mat eqs</Ocode> - Check if two numbers are equal.</li>
+<li><Ocode>mat grtr</Ocode> - Check if the first number is greater than the second.</li>
+<li><Ocode>mat less</Ocode> - Check if the first number is less than the second.</li>
+<li><Ocode>mat grtreqs</Ocode> - Check if the first number is greater than or equal to the second.</li>
+<li><Ocode>mat lesseqs</Ocode> - Check if the first number is less than or equal to the second.</li>
+<li><Ocode>mat random</Ocode> - Generate a random number within a range.</li>
+<li><Ocode>mat int</Ocode> - Convert a floating-point number to an integer.</li>
+</Oul>
+
+<Op>Example: Simple Calculator</Op>
+<CodeView>
+var set "5" a;
+var set "10" b;
+mat plus a b result;
+csl write result;
+</CodeView>
+<Op>Result: Outputs "15".</Op>
+
+<Oh2>Boolean Operations</Oh2>
+<Op>Boolean operations allow you to perform logical operations.</Op>
+
+<Oh3>Key Commands:</Oh3>
+<Oul>
+<li><Ocode>bln and</Ocode> - Logical "AND".</li>
+<li><Ocode>bln or</Ocode> - Logical "OR".</li>
+<li><Ocode>bln xor</Ocode> - Exclusive "OR".</li>
+<li><Ocode>bln not</Ocode> - Logical negation.</li>
+</Oul>
+
+<Op>Example: Logical AND</Op>
+<CodeView>
+var set "true" a;
+var set "true" b;
+bln and a b result;
+csl write result;
+</CodeView>
+<Op>Result: Outputs "true".</Op>
+
+<Oh2>Practical Example: Quiz Program</Oh2>
+<Op>Objective: Create a simple quiz that checks user answers.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Set up questions and answers:
+<CodeView>
+var set "What is 2 + 2?" question;
+var set "4" correctAnswer;
+</CodeView></li>
+
+<li>Read user input:
+<CodeView>
+csl write question;
+csl read userInput;
+</CodeView></li>
+
+<li>Check answer:
+<CodeView>
+str eqs userInput correctAnswer isCorrect;
+csl write "Your answer is ";
+csl write isCorrect;
+</CodeView></li>
+</Oul>
+
+<Op>Result:</Op>
+<Op>The program asks a question, reads the user's answer, and checks if it's correct.</Op>
+
+<Oh2>Conclusion</Oh2>
+<Op>Virtel Steps offers a variety of operations for string manipulation, mathematical calculations, and boolean logic. By using these commands, you can create programs that handle complex data tasks efficiently. 
+    Practice with different operations to become more comfortable with the language.</Op>
+
+
+
+
+
+
+
+
+
+
 <Oh2>Commands</Oh2>
 <div class="h-5"></div>
 
