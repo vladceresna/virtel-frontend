@@ -13,17 +13,121 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 
 </script>
 <Oh1>System</Oh1>
-<Op>
-    This is work
-</Op>
 
-<Oh3>Example</Oh3>
+
+<Oh2>Simple File Manager with Audio and Speech Features</Oh2>
+<Op>Objective: Create a simple file manager that can save text to a file, read from a file, delete a file, play audio, and use text-to-speech for notifications.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Save Text to File:
 <CodeView>
-
+scr get editor "text" content;
+var set "$/data/notes.txt" filePath;
+fls write filePath content;
+tts say2 "Файл збережено!";
 </CodeView>
-<Op>
-    
-</Op>
+<Oul>
+<li>Retrieves the text from the editor.</li>
+<li>Sets the file path.</li>
+<li>Writes the content to the file.</li>
+<li>Notifies the user that the file is saved.</li>
+</Oul>
+</li>
+
+<li>Read from File:
+<CodeView>
+var set "$/data/notes.txt" filePath;
+fls read filePath content;
+scr set editor "text" content;
+tts say2 "Файл відкрито!";
+</CodeView>
+<Oul>
+<li>Sets the file path.</li>
+<li>Reads the content from the file.</li>
+<li>Displays the content in the editor.</li>
+<li>Notifies the user that the file is opened.</li>
+</Oul>
+</li>
+
+<li>Delete File:
+<CodeView>
+var set "$/data/notes.txt" filePath;
+fls del filePath;
+tts say2 "Файл видалено!";
+</CodeView>
+<Oul>
+<li>Sets the file path.</li>
+<li>Deletes the file.</li>
+<li>Notifies the user that the file is deleted.</li>
+</Oul>
+</li>
+
+<li>Play Audio File:
+<CodeView>
+spr play "mp3" "$/music/background.mp3";
+</CodeView>
+<Oul>
+<li>Plays the audio file "background.mp3" from the "music" directory.</li>
+</Oul>
+</li>
+
+<li>Text-to-Speech Notification:
+<CodeView>
+tts say2 "Дія виконано!";
+</CodeView>
+<Oul>
+<li>synthesizes and plays the text "Дія виконано!"</li>
+</Oul>
+</li>
+</Oul>
+
+<Op>Full Code:</Op>
+<CodeView>
+// Save file
+scr get editor "text" content;
+var set "$/data/notes.txt" filePath;
+fls write filePath content;
+tts say2 "Файл збережено!";
+
+// Open file
+var set "$/data/notes.txt" filePath;
+fls read filePath content;
+scr set editor "text" content;
+tts say2 "Файл відкрито!";
+
+// Delete file
+var set "$/data/notes.txt" filePath;
+fls del filePath;
+tts say2 "Файл видалено!";
+
+// Play audio
+spr play "mp3" "$/music/background.mp3";
+
+// Text-to-speech notification
+tts say2 "Action completed!";
+</CodeView>
+
+<Op>Result:</Op>
+<Op>A simple file manager with the ability to save, open, and delete files, 
+    play audio, and provide voice notifications.</Op>
+
+<Oh2>Conclusion</Oh2>
+<Op>By integrating file operations, audio playback, and text-to-speech, 
+    you've created a versatile file manager. This program demonstrates the power 
+    and flexibility of Virtel Steps in handling various tasks.</Op>
+
+
+
+
+
+
+
+
+
+
+
+
 <Oh2>Commands</Oh2>
 <div class="h-5"></div>
 

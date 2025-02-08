@@ -13,17 +13,109 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 
 </script>
 <Oh1>Screen</Oh1>
-<Op>
-    This is work
-</Op>
 
-<Oh3>Example</Oh3>
+
+
+
+
+<Oh2>Creating a Simple Text Editor Interface</Oh2>
+<Op>Objective: Create a basic text editor interface with input field and buttons.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Create input field:
 <CodeView>
-
+scr new inputField "input" "1" "max/min" root;
+scr set inputField "title" "Enter your text here";
 </CodeView>
-<Op>
-    
-</Op>
+<Oul>
+<li>"inputField" is the name of the input widget.</li>
+<li>"input" is the type of the widget.</li>
+<li>"1" is the weight of the widget.</li>
+<li>"max/min" is the size of the widget.</li>
+<li>"root" is the parent widget.</li>
+</Oul>
+</li>
+
+<li>Create save button:
+<CodeView>
+scr new saveBtn "button" "0" "min/min" root;
+scr set saveBtn "title" "Save";
+scr set saveBtn "onClick" "/save.steps";
+</CodeView>
+<Oul>
+<li>"saveBtn" is the name of the button widget.</li>
+<li>"button" is the type of the widget.</li>
+<li>"0" is the weight of the widget.</li>
+<li>"min/min" is the size of the widget.</li>
+<li>"root" is the parent widget.</li>
+</Oul>
+</li>
+
+<li>Create clear button:
+<CodeView>
+scr new clearBtn "button" "0" "min/min" root;
+scr set clearBtn "title" "Clear";
+scr set clearBtn "onClick" "/clear.steps";
+</CodeView>
+<Oul>
+<li>"clearBtn" is the name of the button widget.</li>
+<li>"button" is the type of the widget.</li>
+<li>"0" is the weight of the widget.</li>
+<li>"min/min" is the size of the widget.</li>
+<li>"root" is the parent widget.</li>
+</Oul>
+</li>
+
+<li>Create output area:
+<CodeView>
+scr new output "text" "1" "max/min" root;
+scr set output "text" "Output will appear here";
+</CodeView>
+<Oul>
+<li>"output" is the name of the text widget.</li>
+<li>"text" is the type of the widget.</li>
+<li>"1" is the weight of the widget.</li>
+<li>"max/min" is the size of the widget.</li>
+<li>"root" is the parent widget.</li>
+</Oul>
+</li>
+</Oul>
+
+<Op>Full Code:</Op>
+<CodeView>
+scr new inputField "input" "1" "max/min" root;
+scr set inputField "title" "Enter your text here";
+
+scr new saveBtn "button" "0" "min/min" root;
+scr set saveBtn "title" "Save";
+scr set saveBtn "onClick" "/save.steps";
+
+scr new clearBtn "button" "0" "min/min" root;
+scr set clearBtn "title" "Clear";
+scr set clearBtn "onClick" "/clear.steps";
+
+scr new output "text" "1" "max/min" root;
+scr set output "text" "Output will appear here";
+</CodeView>
+
+<Oh2>Result</Oh2>
+<Op>A simple text editor interface with input field, 
+	save button, clear button, and output area.</Op>
+
+<Oh2>Conclusion</Oh2>
+<Op>By following these steps, you've created a basic text editor interface. 
+	You can further customize it by adding more features and styling.</Op>
+
+
+
+
+
+
+
+
+
+
 <Oh2>Commands</Oh2>
 <div class="h-5"></div>
 

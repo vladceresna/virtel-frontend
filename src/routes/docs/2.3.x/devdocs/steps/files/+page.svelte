@@ -13,17 +13,84 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 
 </script>
 <Oh1>Files</Oh1>
-<Op>
-    This is work
-</Op>
 
-<Oh3>Example</Oh3>
+
+
+
+
+
+<Oh2>File Operations in a Text Editor</Oh2>
+<Op>Objective: Implement file operations (save and open) in a text editor.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Save File:
 <CodeView>
-
+scr get editor "text" content;
+var set "$/data/document.txt" filePath;
+fls write filePath content;
+csl write "File saved successfully!";
 </CodeView>
-<Op>
-    
-</Op>
+<Oul>
+<li>Retrieves the text from the editor.</li>
+<li>Sets the file path.</li>
+<li>Writes the content to the file.</li>
+<li>Informs the user that the file was saved.</li>
+</Oul>
+</li>
+
+<li>Open File:
+<CodeView>
+var set "$/data/document.txt" filePath;
+fls read filePath content;
+scr set editor "text" content;
+csl write "File opened successfully!";
+</CodeView>
+<Oul>
+<li>Sets the file path.</li>
+<li>Reads the content from the file.</li>
+<li>Displays the content in the editor.</li>
+<li>Informs the user that the file was opened.</li>
+</Oul>
+</li>
+</Oul>
+
+<Op>Full Code:</Op>
+<CodeView>
+// Save file
+scr get editor "text" content;
+var set "$/data/document.txt" filePath;
+fls write filePath content;
+csl write "File saved successfully!";
+
+// Open file
+var set "$/data/document.txt" filePath;
+fls read filePath content;
+scr set editor "text" content;
+csl write "File opened successfully!";
+</CodeView>
+
+<Op>Result:</Op>
+<Op>A text editor with functionality to save and open files.</Op>
+
+<Oh2>Conclusion</Oh2>
+<Op>By integrating file operations, you've enhanced the text editor's functionality. 
+    Users can now save their work and open existing files.</Op>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <Oh2>Commands</Oh2>
 <div class="h-5"></div>
 
