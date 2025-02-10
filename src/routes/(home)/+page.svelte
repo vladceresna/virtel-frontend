@@ -14,8 +14,8 @@
         Your best virtual enviroment
     </h4>
     <div class="justify-center align-center">
-        <Button href="/docs/installing" class="m-1">Get Started</Button>
-        <Button href="/docs" class="m-1" variant="outline">Learn More</Button>
+        <Button href="/docs" class="m-1">Get Started</Button>
+        <Button class="m-1" variant="secondary" href="https://discord.gg/hNSyTvuy2v">Join our Discord Community!</Button>
     </div>
     
 </div>
@@ -37,7 +37,7 @@ referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
             </div>
         </Card.Content>
         <Card.Footer>
-            <Button href="/docs/cmds">Learn more about Steps</Button>
+            <Button href="/docs/2.3.x/devdocs/steps">Learn more about Steps</Button>
         </Card.Footer>
     </Card.Root>
     <div class="flex-1 w-full justify-center align-middle border rounded-lg">

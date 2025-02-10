@@ -1,3 +1,8 @@
+<svelte:head>
+	<title>Documentation | The best system for operating your device | Virtel Project | Full Control</title>
+	<meta name="description" content="Powerful, user-friendly and super-lightweight operating system - the way to new generation of Web 3.0 Internet. Virtualize your world! Download Virtel!">
+</svelte:head>
+
 <script lang="ts">
     import Combobox from "$lib/components/ui/combobox/combobox.svelte";
     import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";

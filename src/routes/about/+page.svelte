@@ -14,15 +14,16 @@
         <br>
         Your best crossplatform virtual enviroment
     </h4>
+    <Button class="mx-auto" variant="secondary" href="https://discord.gg/hNSyTvuy2v">Join our Discord Community!</Button>
     <h4 class="scroll-m-20 text-xl font-semibold tracking-tight">
         This is Open Source Project! Contains 3 projects: 
         <br>
         this backend, frontend, and Virtel application (platform)
     </h4>
-    <div class="flex justify-center items-center">
-        <Button href="https://github.com/vladceresna/virtel-backend" class="m-2">It Frontend Sources</Button>
+    <div class="flex flex-col justify-center items-center">
+        <Button href="https://github.com/vladceresna/virtel-frontend" class="m-2">It Frontend Sources</Button>
         <Button href="https://github.com/vladceresna/virtel" class="m-2">Virtel Sources</Button>
-        <Button href="https://github.com/vladceresna/virtel-frontend" class="m-2">It Backend Sources</Button>
+        <Button href="https://github.com/vladceresna/virtel-backend" class="m-2">It Backend Sources</Button>
     </div>
     <h3 class="scroll-m-20 text-2xl font-semibold tracking-tight">
         Made with and thanks for:
@@ -40,7 +41,5 @@
         <Button class="mx-auto" href="https://spring.io/">
             Spring
         </Button>
-    
-    <Button class="mx-auto" variant="secondary" href="https://discord.gg/hNSyTvuy2v">Join our Discord Community!</Button>
     
 </div>
