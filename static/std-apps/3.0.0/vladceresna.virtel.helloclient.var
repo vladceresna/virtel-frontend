@@ -1,0 +1,32 @@
+
+[/buttonClick.steps]
+
+scr get "inputView" "value" url;
+clt req "get" url "" statusRes bodyRes;
+scr set "textResultView" "value" bodyRes;
+
+[/saveResponse.steps]
+scr get "inputPathView" "value" path;
+scr get "textResultView" "value" content;
+fls write path content;
+[/start.steps]
+
+scr new "columnView" "column" "0" "max/max" "root";
+
+scr new "buttonView" "button" "0" "max/min" "columnView";
+scr set "buttonView" "onClick" "/buttonClick.steps";
+scr new "textOnButtonView" "text" "0" "max/min" "buttonView";
+scr set "textOnButtonView" "title" "Open";
+scr new "inputView" "input" "0" "max/min" "columnView";
+scr set "inputView" "title" "Site URL";
+scr new "textResultView" "input" "1" "min/min" "columnView";
+scr set "textResultView" "value" "Future Result";
+
+scr new "inputPathView" "input" "0" "max/min" "columnView";
+scr set "inputPathView" "title" "Save to Path";
+
+scr new "buttonSaveView" "button" "0" "max/min" "columnView";
+scr set "buttonSaveView" "onClick" "/saveResponse.steps";
+scr new "textOnButtonSaveView" "text" "0" "max/min" "buttonSaveView";
+scr set "textOnButtonSaveView" "title" "Save";
+[end]

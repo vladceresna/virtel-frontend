@@ -1,0 +1,47 @@
+
+[/buttonViewClick.steps]
+
+
+scr get appId iinputView "value";
+scr get appUri iinputView2 "value";
+
+sys homedir homedir;
+str add homedir "/programs/" programsdir;
+str add programsdir appId appdir;
+str add appdir "/code/" installerdir;
+fls dir installerdir;
+
+str cut "0" "8" appUri protocol;
+str eqs protocol "file:///" isFile;
+bln not isFile isNotFile;
+run if isFile "/getVarFromFile.steps";
+run if isNotFile "/getVarFromUrl.steps";
+
+sys install appId varContent;
+
+
+[/getVarFromFile.steps]
+
+str len appUri appUriLen;
+str cut "8" appUriLen appUri filePath;
+fls read filePath varContent;
+
+[/getVarFromUrl.steps]
+
+clt req "get" appUri "" installerStatus varContent;
+
+[/start.steps]
+
+
+scr new "column" "column" "0" "max/max" "root";
+scr new "iinputView" "input" "0" "max/min" "column";
+scr set "iinputView" "title" "App ID (ex: author.project.appname)";
+scr new "iinputView2" "input" "0" "max/min" "column";
+scr set "iinputView2" "title" "Url (as https://) or File path (as file:///)";
+scr new "buttonView" "button" "0" "max/min" "column";
+scr set "buttonView" "onClick" "/buttonViewClick.steps";
+scr new "buttonTextView" "text" "0" "min/min" "buttonView";
+scr set "buttonTextView" "title" "Install VAR app from url or file";
+
+
+[end]

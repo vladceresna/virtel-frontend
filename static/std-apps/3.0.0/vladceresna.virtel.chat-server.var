@@ -1,0 +1,47 @@
+
+[/get_messages.steps]
+stg get "messagesStr" messagesStr;
+[/init.steps]
+lst new messages;
+lst var messages messagesStr;
+stg set "messagesStr" messagesStr;
+[/send_message.steps]
+var import "flow-0" messagesLock;
+run while messagesLock "/send_message_lock.steps";
+var set "true" messagesLock;
+var export "flow-0" messagesLock;
+
+stg get "messagesStr" messagesStr;
+var list messagesStr messages;
+
+var set server-body message;
+
+lst len messages messagesLen;
+lst set messages messagesLen message;
+
+lst var messages messagesStr;
+stg set "messagesStr" messagesStr;
+
+var set "false" messagesLock;
+var export "flow-0" messagesLock;
+
+csl write "Message added";
+var set "Added" result;
+[/send_message_lock.steps]
+var import "flow-0" messagesLock;
+[/start.steps]
+
+stg get "messagesStr" messagesStr;
+str eqs messagesStr "" isEmpty;
+run if isEmpty "/init.steps";
+
+var set "false" messagesLock;
+
+srv new server;
+
+srv add "post" "/send" "/send_message.steps" result server;
+srv add "get" "/messages" "/get_messages.steps" messagesStr server;
+
+srv run "8080" server;
+
+[end]

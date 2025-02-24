@@ -1,0 +1,20 @@
+
+[/buttonViewClick.steps]
+
+scr get "inputView" "value" appId;
+scr get "inputView2" "value" path;
+sys pack appId var;
+fls write path var;
+
+[/start.steps]
+
+scr new "column" "column" "0" "max/max" "root";
+scr new "inputView" "input" "0" "max/min" "column";
+scr set "inputView" "title" "App ID (ex: author.project.appname)";
+scr new "inputView2" "input" "0" "max/min" "column";
+scr set "inputView2" "title" "Path";
+scr new "buttonView" "button" "0" "max/min" "column";
+scr set "buttonView" "onClick" "/buttonViewClick.steps";
+scr new "buttonTextView" "text" "0" "min/min" "buttonView";
+scr set "buttonTextView" "title" "Pack App to Path as VAR";
+[end]

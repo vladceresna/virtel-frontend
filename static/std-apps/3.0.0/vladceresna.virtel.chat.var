@@ -1,0 +1,63 @@
+
+[/get_messages.steps]
+
+scr get "inputViewDomain" "value" domain;
+str add domain "/messages" url;
+clt req "get" url "" status bodyResult;
+var list bodyResult messages;
+
+scr clear "messagesColumn";
+run each messages item "/paintElement.steps";
+
+messagesColumn
+[/paintElement.steps]
+str add itemIndex "Text" textName;
+str add itemIndex "Card" cardName;
+
+
+scr new cardName "card" "0" "min/min" "messagesColumn";
+
+scr new textName "text" "0" "min/min" cardName;
+scr set textName "title" item;
+
+
+
+
+
+item
+itemIndex
+
+messagesColumn
+[/send_message.steps]
+
+scr get "inputViewDomain" "value" domain;
+scr get "inputView" "value" message;
+str add domain "/send" url;
+clt req "post" url message statusSend bodyResultSend;
+csl write bodyResultSend;
+csl write statusSend;
+run one "/get_messages.steps";
+[/start.steps]
+scr new "messagesColumn" "column" "1" "max/min" "root";
+scr set "messagesColumn" "scrollable" "true";
+scr set "messagesColumn" "align" "end";
+scr set "messagesColumn" "justify" "end";
+
+scr new "inputViewDomain" "input" "0" "max/min" "root";
+scr set "inputViewDomain" "title" "Enter your Chat URL in format: http://domain.com:8080";
+
+scr new "inputView" "input" "0" "max/min" "root";
+scr set "inputView" "title" "Enter message";
+
+scr new "buttonView" "button" "0" "max/min" "root";
+scr set "buttonView" "onClick" "/send_message.steps";
+scr new "textOnButton" "text" "0" "max/min" "buttonView";
+scr set "textOnButton" "title" "Send";
+
+run flow "/updater.steps" flowName;
+[/update.steps]
+run pause "2000";
+run one "/get_messages.steps";
+[/updater.steps]
+run while "true" "/update.steps";
+[end]
