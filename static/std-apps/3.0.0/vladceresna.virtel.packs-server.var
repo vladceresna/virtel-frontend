@@ -1,0 +1,71 @@
+
+[/all.steps]
+
+stg get "programsStr" allRes;
+
+[/download.steps]
+
+var import "flow-0" programsLock;
+
+run while programsLock "/programsLockCycle.steps";
+
+var set "true" programsLock;
+var export "flow-0" programsLock;
+
+stg get appId downloadRes;
+
+var set "false" programsLock;
+
+var export "flow-0" programsLock;
+
+[/init.steps]
+
+lst new programs;
+lst var programs programsStr;
+stg set "programsStr" programsStr;
+
+[/programsLockCycle.steps]
+
+var import "flow-0" programsLock;
+
+[/start.steps]
+
+stg get "programsStr" programsStr;
+str eqs programsStr "" isEmpty;
+run if isEmpty "/init.steps";
+
+var set "false" programsLock;
+
+
+srv new server;
+srv add "get" "/all" "/all.steps" allRes server;
+srv add "get" "/download/{appId}" "/download.steps" downloadRes server;
+srv add "post" "/upload/{appId}" "/upload.steps" uploadRes server;
+srv run "8080" server;
+
+[/upload.steps]
+
+var import "flow-0" programsLock;
+
+run while programsLock "/programsLockCycle.steps";
+
+var set "true" programsLock;
+var export "flow-0" programsLock;
+
+stg set appId server-body;
+str add "Uploaded successfully: " appId uploadRes;
+
+stg get "programsStr" programsStr;
+var list programsStr programs;
+
+lst len programs programsLen;
+lst set programs programsLen appId;
+
+lst var programs programsStr;
+stg set "programsStr" programsStr;
+
+var set "false" programsLock;
+
+var export "flow-0" programsLock;
+
+[end]
