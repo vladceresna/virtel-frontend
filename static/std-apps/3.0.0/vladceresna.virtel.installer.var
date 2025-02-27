@@ -2,8 +2,8 @@
 [/buttonViewClick.steps]
 
 
-scr get appId iinputView "value";
-scr get appUri iinputView2 "value";
+scr get "iinputView" "value" appId;
+scr get "iinputView2" "value" appUri;
 
 sys homedir homedir;
 str add homedir "/programs/" programsdir;
@@ -35,9 +35,9 @@ clt req "get" appUri "" installerStatus varContent;
 
 scr new "column" "column" "0" "max/max" "root";
 scr new "iinputView" "input" "0" "max/min" "column";
-scr set "iinputView" "title" "App ID (ex: author.project.appname)";
+scr set "iinputView" "title" "App ID (author.project.appname)";
 scr new "iinputView2" "input" "0" "max/min" "column";
-scr set "iinputView2" "title" "Url (as https://) or File path (as file:///)";
+scr set "iinputView2" "title" "Url (as https://domain.com/author.app.id.var) or File path (as file:///$/files/path/to/author.app.id.var)";
 scr new "buttonView" "button" "0" "max/min" "column";
 scr set "buttonView" "onClick" "/buttonViewClick.steps";
 scr new "buttonTextView" "text" "0" "min/min" "buttonView";

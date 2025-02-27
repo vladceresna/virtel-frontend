@@ -61,6 +61,15 @@ run one "/installProgram.steps";
 var set "vladceresna.virtel.chat-server" installProgramAppId;
 var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.chat-server.var" installProgramUrl;
 run one "/installProgram.steps";
+
+var set "vladceresna.virtel.packs" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.packs.var" installProgramUrl;
+run one "/installProgram.steps";
+
+var set "vladceresna.virtel.packs-server" installProgramAppId;
+var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.packs-server.var" installProgramUrl;
+run one "/installProgram.steps";
+
 [/installProgram.steps]
 
 str add programsdir installProgramAppId installProgramPath;
