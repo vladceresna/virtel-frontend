@@ -2,13 +2,16 @@
 [/buttonOpenViewClick.steps]
 
 
+
 scr get "inputPathView" "value" path;
 fls read path content;
 scr set "inputFileEditView" "value" content;
 
 
 
+
 [/saveFile.steps]
+
 
 
 
@@ -18,7 +21,9 @@ fls write path content;
 
 
 
+
 [/start.steps]
+
 
 
 
@@ -37,12 +42,13 @@ scr set "textOnButtonOpenView" "title" "Open";
 scr new "scrollEdit" "column" "1" "max/min" "columnView";
 scr set "scrollEdit" "scrollable" "true";
 
-scr new "inputFileEditView" "input" "1" "max/max" "scrollEdit";
+scr new "inputFileEditView" "input" "0" "max/min" "scrollEdit";
 scr set "inputFileEditView" "title" "Content Edit";
 
 scr new "buttonSaveView" "button" "0" "max/min" "columnView";
 scr set "buttonSaveView" "onClick" "/saveFile.steps";
 scr new "textOnButtonSaveView" "text" "0" "max/min" "buttonSaveView";
 scr set "textOnButtonSaveView" "title" "Save";
+
 
 [end]
