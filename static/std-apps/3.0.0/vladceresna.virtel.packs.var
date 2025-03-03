@@ -1,59 +1,13 @@
 
 [/buttonClick.steps]
 
+
 scr get "inputView" "value" url;
 clt req "get" url "" statusRes bodyRes;
 scr set "textResultView" "value" bodyRes;
 
-[/installClick0.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.packs-server" "" status body;
-sys install "vladceresna.virtel.packs-server" body;
-scr set "installButtonText0" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText0" "title" "Install";
-[/installClick1.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.packs" "" status body;
-sys install "vladceresna.virtel.packs" body;
-scr set "installButtonText1" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText1" "title" "Install";
-[/installClick2.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.speedflow" "" status body;
-sys install "vladceresna.virtel.speedflow" body;
-scr set "installButtonText2" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText2" "title" "Install";
-[/installClick3.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.pluscalc" "" status body;
-sys install "vladceresna.virtel.pluscalc" body;
-scr set "installButtonText3" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText3" "title" "Install";
-[/installClick4.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.packs" "" status body;
-sys install "vladceresna.virtel.packs" body;
-scr set "installButtonText4" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText4" "title" "Install";
-[/installClick5.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.chat" "" status body;
-sys install "vladceresna.virtel.chat" body;
-scr set "installButtonText5" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText5" "title" "Install";
-[/installClick6.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.launcher" "" status body;
-sys install "vladceresna.virtel.launcher" body;
-scr set "installButtonText6" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText6" "title" "Install";
-[/installClick7.steps]
-clt req "get" "http://localhost:8080/download/vladceresna.virtel.installer" "" status body;
-sys install "vladceresna.virtel.installer" body;
-scr set "installButtonText7" "title" "Installed!";
-run pause "10000";
-scr set "installButtonText7" "title" "Install";
 [/paintProgram.steps]
+
 str split "." item itemList;
 lst get itemList "2" name;
 
@@ -92,8 +46,14 @@ fls write clickFilePath content;
 
 
 scr new cardName "card" "0" "min/min" "packsColumn";
+scr set cardName "marginTop" "5";
+scr set cardName "marginBottom" "5";
+scr set cardName "marginLeft" "0";
+scr set cardName "marginRight" "0";
 scr new rowName "row" "0" "max/min" cardName;
+
 scr new columnName "column" "1" "min/min" rowName;
+
 scr new nameName "text" "0" "min/min" columnName;
 scr set nameName "title" name;
 scr new appIdName "text" "0" "min/min" columnName;
@@ -105,7 +65,9 @@ scr set buttonTextName "title" "Install";
 scr set buttonName "onClick" installClickName;
 
 itemIndex
+
 [/see.steps]
+
 
 scr get "inputView" "value" domain;
 str add domain "/all" url;
@@ -117,7 +79,9 @@ var list bodyRes programs;
 scr clear "packsColumn";
 
 run each programs item "/paintProgram.steps";
+
 [/start.steps]
+
 
 scr new "columnView" "column" "0" "max/max" "root";
 
@@ -145,7 +109,9 @@ scr new "buttonUploadView" "button" "0" "max/min" "columnView";
 scr set "buttonUploadView" "onClick" "/upload.steps";
 scr new "textOnButtonSaveView" "text" "0" "max/min" "buttonUploadView";
 scr set "textOnButtonSaveView" "title" "Upload program by AppId";
+
 [/upload.steps]
+
 scr get "inputView" "value" domain;
 scr get "inputAppView" "value" appId;
 
@@ -159,5 +125,6 @@ clt req "post" url content status body;
 scr set "textOnButtonSaveView" "title" "Uploaded Successfully!";
 run pause "10000";
 scr set "textOnButtonSaveView" "title" "Upload program by AppId";
+
 
 [end]
