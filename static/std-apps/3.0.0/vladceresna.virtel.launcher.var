@@ -1,31 +1,25 @@
 
-[/backclick.steps]
-
-sys start "vladceresna.virtel.launcher";
-
 [/buttonShutdownOnClick.steps]
+
 scr new "column" "column" "-1" "max/min" "root";
-[/buttonThemeOnClick.steps]
-stg get "theme" theme;
-str eqs theme "dark" isDark;
-bln not isDark isNotDark;
-run if isDark "/setLightTheme.steps";
-run if isNotDark "/setDarkTheme.steps";
-stg set "theme" theme;
+
 [/buttonViewOnClick.steps]
+
 scr page "";
 scr get "inputView" "value" inputViewValue;
 sys start inputViewValue;
 
-[/createTheme.steps]
-stg set "theme" "dark";
-stg get "theme" theme;
-csl write theme;
+
+[/createPage.steps]
+scr page "";
 [/homeclick.steps]
+
 
 sys start "vladceresna.virtel.launcher";
 
+
 [/installAll.steps]
+
 
 sys homedir homedir;
 str add homedir "/programs/" programsdir;
@@ -54,14 +48,6 @@ var set "vladceresna.virtel.helloclient" installProgramAppId;
 var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.helloclient.var" installProgramUrl;
 run one "/installProgram.steps";
 
-var set "vladceresna.virtel.chat" installProgramAppId;
-var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.chat.var" installProgramUrl;
-run one "/installProgram.steps";
-
-var set "vladceresna.virtel.chat-server" installProgramAppId;
-var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.chat-server.var" installProgramUrl;
-run one "/installProgram.steps";
-
 var set "vladceresna.virtel.packs" installProgramAppId;
 var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.packs.var" installProgramUrl;
 run one "/installProgram.steps";
@@ -72,6 +58,7 @@ run one "/installProgram.steps";
 
 [/installProgram.steps]
 
+
 str add programsdir installProgramAppId installProgramPath;
 str add installProgramPath "/code/" installerdir;
 fls xst installerdir installerxst;
@@ -80,105 +67,98 @@ run if installerNotXst "/installer.steps";
 
 gets installProgramAppId installProgramUrl
 
+
 [/installer.steps]
+
 
 clt req "get" installProgramUrl "" installerStatus installerBody;
 fls dir installerdir;
 sys install installProgramAppId installerBody;
 
-[/page.steps]
-scr page "1";
 
-[/setDarkTheme.steps]
-var set "dark" theme;
-scr theme theme;
-[/setLightTheme.steps]
-var set "light" theme;
-scr theme theme;
-[/settingsclick.steps]
+[/openPacks.steps]
 
-sys start "vladceresna.virtel.settings";
+sys start "vladceresna.virtel.packs";
 
 [/start.steps]
+
 
 csl write "Virtel Launcher started";
 
 run one "/installAll.steps";
 
-scr nav "/homeclick.steps" "home";
-scr nav "/backclick.steps" "back";
-
 sys apps appsList;
 lst var appsList appsStr;
 
 scr new "column" "column" "0" "max/max" "root";
+scr set "column" "scrollable" "true";
+
+
+scr new "card" "card" "0" "max/min" "column";
+scr set "card" "margin" "5";
+scr new "columnApps" "column" "0" "max/min" "card";
+scr set "columnApps" "align" "center";
+scr set "columnApps" "justify" "center";
+scr new "titleText" "text" "0" "min/min" "columnApps";
+scr set "titleText" "variant" "super";
+scr set "titleText" "title" "Virtel";
+scr set "titleText" "paddingTop" "20";
+scr set "titleText" "paddingBottom" "40";
+scr new "appsText" "text" "0" "min/min" "columnApps";
+
+scr set "appsText" "title" "Your ideal work environment!";
+scr set "appsText" "variant" "secondary";
+scr set "appsText" "align" "center";
+scr set "appsText" "justify" "center";
+
+
+scr new "cardPacks" "card" "0" "max/min" "column";
+scr set "cardPacks" "margin" "5";
+scr set "cardPacks" "onClick" "/openPacks.steps";
+scr new "textPacks" "text" "0" "max/min" "cardPacks";
+scr set "textPacks" "title" "Packs";
+scr set "textPacks" "variant" "secondary";
+scr new "textPacks2" "text" "0" "max/min" "cardPacks";
+scr set "textPacks2" "title" "Download and install apps from the web in Virtel. 
+Upload your apps to our store or set up your own";
+scr set "textPacks2" "variant" "tertiary";
+
+
+scr new "cardPage" "card" "0" "max/min" "column";
+scr set "cardPage" "margin" "5";
+scr set "cardPage" "onClick" "/createPage.steps";
+scr new "textPage" "text" "0" "max/min" "cardPage";
+scr set "textPage" "title" "Create Page";
+scr set "textPage" "variant" "secondary";
+scr new "textPage2" "text" "0" "max/min" "cardPage";
+scr set "textPage2" "title" "Work on many pages.
+Differ your space.";
+scr set "textPage2" "variant" "tertiary";
+
+
+scr new "cardDashboard" "card" "0" "max/min" "column";
+scr set "cardDashboard" "margin" "5";
+scr new "textDashboard" "text" "0" "max/min" "cardDashboard";
+scr set "textDashboard" "title" "Dashboard";
+scr set "textDashboard" "variant" "secondary";
+scr new "textDashboard2" "text" "0" "max/min" "cardDashboard";
+scr set "textDashboard2" "title" "Tap on lines and points below and see Virtel Operation Panel.
+Open other apps on Dashboard.
+Textly - text editor, Calculator, Complex compiler and more for you :)";
+scr set "textDashboard2" "variant" "tertiary";
+
 
 scr new "cardNav" "card" "0" "max/min" "column";
+scr set "cardNav" "margin" "5";
 
 scr new "adaptiveLayout" "row" "0" "max/min" "cardNav";
 scr set "adaptiveLayout" "align" "end";
 scr set "adaptiveLayout" "justify" "end";
-
-scr new "buttonTheme" "button" "0" "min/min" "adaptiveLayout";
-scr set "buttonTheme" "onClick" "/buttonThemeOnClick.steps";
-scr set "buttonTheme" "variant" "primary";
-scr new "buttonTextTheme" "text" "0" "min/min" "buttonTheme";
-scr set "buttonTextTheme" "title" "ReTheme";
 
 scr new "buttonShutdown" "button" "0" "min/min" "adaptiveLayout";
 scr set "buttonShutdown" "onClick" "/buttonShutdownOnClick.steps";
 scr set "buttonShutdown" "variant" "primary";
 scr new "buttonTextShutdown" "text" "0" "min/min" "buttonShutdown";
 scr set "buttonTextShutdown" "title" "Shutdown";
-
-
-
-
-scr new "card" "card" "1" "max/min" "column";
-scr new "columnApps" "column" "0" "max/min" "card";
-scr new "titleText" "text" "0" "max/min" "columnApps";
-scr set "titleText" "variant" "primary";
-scr set "titleText" "title" "Welcome in Virtel";
-scr new "appsText" "text" "0" "max/min" "columnApps";
-
-str add "Use Virtel on Android, Windows and Linux!)
-https://virtel.netlify.app/
-https://discord.gg/hNSyTvuy2v
-Input in field below AppID of app, which want to run.
-Installed programs AppIDs: " appsStr appsTextText;
-scr set "appsText" "title" appsTextText;
-
-
-scr new "cardInput" "card" "0" "min/min" "column";
-
-scr new "adaptive" "adaptive" "0" "max/min" "cardInput";
-scr set "adaptive" "align" "end";
-scr set "adaptive" "justify" "end";
-
-scr new "inputView" "input" "1" "max/min" "adaptive";
-scr set "inputView" "title" "AppID";
-scr set "inputView" "justify" "center";
-scr set "inputView" "align" "center";
-
-scr new "submit" "column" "0" "min/min" "adaptive";
-scr set "submit" "paddingLeft" "10";
-scr set "submit" "paddingTop" "5";
-scr set "submit" "paddingBottom" "5";
-scr set "submit" "justify" "center";
-scr set "submit" "align" "center";
-scr new "buttonView" "button" "0" "min/min" "submit";
-scr set "buttonView" "onClick" "/buttonViewOnClick.steps";
-scr set "buttonView" "variant" "primary";
-scr new "buttonTextView" "text" "0" "min/min" "buttonView";
-scr set "buttonTextView" "title" "Run!";
-
-stg get "theme" theme;
-str eqs theme "dark" isDark;
-str eqs theme "light" isLight;
-bln or isDark isLight isNotEmpty;
-bln not isNotEmpty isEmpty;
-run if isEmpty "/createTheme.steps";
-csl write isEmpty;
-scr theme theme;
 
 [end]

@@ -17,7 +17,7 @@
   <h2
   class="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0"
   >
-   Maple 3.1.1 Beta
+   Maple 3.2.1 Beta
   </h2>
   <h4 class="text-muted-foreground scroll-m-20 text-xl font-semibold tracking-tight">
       For every platform. Open Source. Your best virtual enviroment
@@ -26,32 +26,32 @@
 
 <div class="flex md:flex-row flex-col gap-5">
   <DownloadOption 
-  url="https://github.com/vladceresna/virtel/releases/download/3.1.1-beta/com.vladceresna.virtel-3.1.1-android.apk"
+  url="https://github.com/vladceresna/virtel/releases/download/3.2.1-beta/com.vladceresna.virtel-3.2.1-android.apk"
   os="Android"
   format="APK"
-  version="3.1.1"
-  weight="20 MB"
+  version="3.2.1"
+  weight="21 MB"
   />
   <DownloadOption 
-  url="https://github.com/vladceresna/virtel/releases/download/3.1.1-beta/com.vladceresna.virtel-3.1.1-windows.exe"
+  url="https://github.com/vladceresna/virtel/releases/download/3.2.1-beta/com.vladceresna.virtel-3.2.1-windows.exe"
   os="Windows"
   format="EXE"
-  version="3.1.1"
+  version="3.2.1"
   weight="80 MB"
   />
   <DownloadOption 
-  url="https://github.com/vladceresna/virtel/releases/download/3.1.1-beta/com.vladceresna.virtel-3.1.1-debian.deb"
+  url="https://github.com/vladceresna/virtel/releases/download/3.2.1-beta/com.vladceresna.virtel-3.2.1-debian.deb"
   os="Debian/Ubuntu"
   format="DEB"
-  version="3.1.1"
-  weight="121 MB"
+  version="3.2.1"
+  weight="123 MB"
   />
   <DownloadOption 
-  url="https://github.com/vladceresna/virtel/releases/download/3.1.1-beta/com.vladceresna.virtel-3.1.1-linux.tar.xz"
+  url="https://github.com/vladceresna/virtel/releases/download/3.2.1-beta/com.vladceresna.virtel-3.2.1-linux.tar.xz"
   os="Other Linux"
   format="TAR.XZ"
-  version="3.1.1"
-  weight="124 MB"
+  version="3.2.1"
+  weight="123 MB"
   />
 </div>
 
