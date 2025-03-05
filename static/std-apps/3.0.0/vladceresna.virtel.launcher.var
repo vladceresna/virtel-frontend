@@ -40,10 +40,6 @@ var set "vladceresna.virtel.calculator" installProgramAppId;
 var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.calculator.var" installProgramUrl;
 run one "/installProgram.steps";
 
-var set "vladceresna.virtel.complex" installProgramAppId;
-var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.complex.var" installProgramUrl;
-run one "/installProgram.steps";
-
 var set "vladceresna.virtel.helloclient" installProgramAppId;
 var set "https://virtel.netlify.app/std-apps/3.0.0/vladceresna.virtel.helloclient.var" installProgramUrl;
 run one "/installProgram.steps";
