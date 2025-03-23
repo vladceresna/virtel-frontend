@@ -39,7 +39,7 @@
 	<div class="relative justify-center bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
 	>
 		<h4 class="leading-0 font-bold text-white">
-			Meet Virtel Maple 3.2.x! Packs, UI, PQC Crypto and Fixes.
+			Meet Virtel Maple 3.3.x! Packs, UI, PQCrypto and Fixes.
 		</h4>
 		<Button href="/download" variant="outline" class="p-3 h-7 rounded-sm">
 			Download
