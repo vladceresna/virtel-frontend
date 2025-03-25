@@ -12,73 +12,67 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 	import Card from "$lib/components/ui/card/card.svelte";
 
 </script>
+
 <Oh1>Files</Oh1>
 
-
-
-
-
-
-<Oh2>File Operations in a Text Editor</Oh2>
-<Op>Objective: Implement file operations (save and open) in a text editor.</Op>
+<Oh2>Managing File System Operations</Oh2>
+<Op>Objective: Read, write, and manage files and directories.</Op>
 
 <Oh3>Steps:</Oh3>
 <Oul>
-<li>Save File:
+<li>Write to a file:
 <CodeView>
-scr get editor "text" content;
-var set "$/data/document.txt" filePath;
-fls write filePath content;
-csl write "File saved successfully!";
+fls write "$/files/data.txt" "Hello World";
 </CodeView>
 <Oul>
-<li>Retrieves the text from the editor.</li>
-<li>Sets the file path.</li>
-<li>Writes the content to the file.</li>
-<li>Informs the user that the file was saved.</li>
+<li>"$/files/data.txt" is the file path.</li>
+<li>"Hello World" is the content to write.</li>
 </Oul>
 </li>
-
-<li>Open File:
+<li>Read from a file:
 <CodeView>
-var set "$/data/document.txt" filePath;
-fls read filePath content;
-scr set editor "text" content;
-csl write "File opened successfully!";
+fls read "$/files/data.txt" fileContent;
+csl write fileContent;
 </CodeView>
 <Oul>
-<li>Sets the file path.</li>
-<li>Reads the content from the file.</li>
-<li>Displays the content in the editor.</li>
-<li>Informs the user that the file was opened.</li>
+<li>"$/files/data.txt" is the file path.</li>
+<li>"fileContent" is the variable to store the content.</li>
 </Oul>
+</li>
+<li>Check if a file exists:
+<CodeView>
+fls xst "$/files/data.txt" exists;
+csl write exists;
+</CodeView>
 </li>
 </Oul>
 
-<Op>Full Code:</Op>
+<Oh2>Practical Example</Oh2>
+<Op>Objective: Create a directory and write a file to it.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Create a directory:
 <CodeView>
-// Save file
-scr get editor "text" content;
-var set "$/data/document.txt" filePath;
-fls write filePath content;
-csl write "File saved successfully!";
-
-// Open file
-var set "$/data/document.txt" filePath;
-fls read filePath content;
-scr set editor "text" content;
-csl write "File opened successfully!";
+fls dir "$/files/newFolder";
 </CodeView>
+</li>
+<li>Write a file to the directory:
+<CodeView>
+fls write "$/files/newFolder/info.txt" "New file";
+</CodeView>
+</li>
+</Oul>
 
-<Op>Result:</Op>
-<Op>A text editor with functionality to save and open files.</Op>
+<Oh2>Tips</Oh2>
+<Oul>
+<li>Use "$" to reference the system path.</li>
+<li>Ensure directories exist before writing files.</li>
+<li>Delete unnecessary files to free up space.</li>
+</Oul>
 
 <Oh2>Conclusion</Oh2>
-<Op>By integrating file operations, you've enhanced the text editor's functionality. 
-    Users can now save their work and open existing files.</Op>
-
-
-
+<Op>File commands like <Ocode>fls write</Ocode>, <Ocode>fls read</Ocode>, and <Ocode>fls dir</Ocode> enable interaction with the file system, ensuring data storage and management.</Op>
 
 
 
@@ -96,109 +90,134 @@ csl write "File opened successfully!";
 
 <div class="flex flex-col gap-5 *:px-5 *:pb-5">
 
-	    <Card>
-    <Oh3 class="notranslate">fls read</Oh3>
-    <Op>Reads the contents of a file from the specified path.</Op>
-    <CodeView>fls read (path) (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the file.</li>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the file content.</li>
-    </Oul>
-    <CodeView>
-var set "$/data/file.txt" filePath;
-fls read filePath fileContent;
+<Card>
+<Oh3 class="notranslate">fls read</Oh3>
+<Op>Reads the content of a file at a specified path and stores it in a new variable.</Op>
+<CodeView>fls read (path) (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to the file (replaces "$" with the system path) (type: VAR).</li>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable to store the content (type: VAR).</li>
+</Oul>
+<CodeView>
+fls read "$/files/data.txt" fileContent;
 csl write fileContent;
-    </CodeView>
-    <Op>
-        This example reads the contents of the "file.txt" file from the "data" directory and prints it to the console.
-    </Op>
-    </Card>
+</CodeView>
+<Op>
+    This example reads the content of "/system/files/data.txt" and prints it.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">fls write</Oh3>
-    <Op>Writes text to a file with the specified path.</Op>
-    <CodeView>fls write (path) (value)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the file.</li>
-        <li><Ocode>value</Ocode>: The text to write.</li>
-    </Oul>
-    <CodeView>
-var set "$/data/file.txt" filePath;
-var set "Привіт, світ!" content;
-fls write filePath content;
-    </CodeView>
-    <Op>
-        This example writes the text "Привіт, світ!" to the "file.txt" file in the "data" directory.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">fls write</Oh3>
+<Op>Writes a value to a file at a specified path, creating directories if they don’t exist.</Op>
+<CodeView>fls write (path) (value)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to the file (replaces "$" with the system path) (type: VAR).</li>
+    <li><Ocode>value</Ocode>: The value to write (type: VAR).</li>
+</Oul>
+<CodeView>
+fls write "$/files/data.txt" "Hello World";
+</CodeView>
+<Op>
+    This example writes "Hello World" to "/system/files/data.txt".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">fls del</Oh3>
-    <Op>Deletes a file or directory with the specified path.</Op>
-    <CodeView>fls del (path)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the file or directory.</li>
-    </Oul>
-    <CodeView>
-var set "$/data/file.txt" filePath;
-fls del filePath;
-    </CodeView>
-    <Op>
-        This example deletes the "file.txt" file from the "data" directory.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">fls del</Oh3>
+<Op>Deletes a file or directory recursively at a specified path.</Op>
+<CodeView>fls del (path)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to the file or directory (replaces "$" with the system path) (type: VAR).</li>
+</Oul>
+<CodeView>
+fls del "$/files/oldData.txt";
+</CodeView>
+<Op>
+    This example deletes the file "/system/files/oldData.txt".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">fls dir</Oh3>
-    <Op>Creates a directory with the specified path.</Op>
-    <CodeView>fls dir (path)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the directory.</li>
-    </Oul>
-    <CodeView>
-var set "$/data/newDir" dirPath;
-fls dir dirPath;
-    </CodeView>
-    <Op>
-        This example creates a "newDir" directory in the "data" directory.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">fls dir</Oh3>
+<Op>Creates a new directory at a specified path.</Op>
+<CodeView>fls dir (path)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to the new directory (replaces "$" with the system path) (type: VAR).</li>
+</Oul>
+<CodeView>
+fls dir "$/files/newFolder";
+</CodeView>
+<Op>
+    This example creates a new directory "/system/files/newFolder".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">fls list</Oh3>
-    <Op>Returns a list of files and directories in the specified directory.</Op>
-    <CodeView>fls list (path) (newListName)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the directory.</li>
-        <li><Ocode>newListName</Ocode>: The new list variable to store the result.</li>
-    </Oul>
-    <CodeView>
-var set "$/data" dirPath;
-fls list dirPath fileList;
-lst get fileList "0" firstItem;
-csl write firstItem;
-    </CodeView>
-    <Op>
-        This example returns a list of items in the "data" directory and prints the first item of the list to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">fls list</Oh3>
+<Op>Gets a list of files in a directory and stores it in a new list variable.</Op>
+<CodeView>fls list (path) (newListName)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to the directory (replaces "$" with the system path) (type: VAR).</li>
+    <li><Ocode>newListName</Ocode>: The name of the new list to store the file names (type: LIST).</li>
+</Oul>
+<CodeView>
+fls list "$/files" fileList;
+lst get fileList "0" firstFile;
+csl write firstFile;
+</CodeView>
+<Op>
+    This example lists files in "/system/files" and prints the first file name.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">fls xst</Oh3>
-    <Op>Checks if a file or directory with the specified path exists.</Op>
-    <CodeView>fls xst (path) (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>path</Ocode>: The path to the file or directory.</li>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
-    </Oul>
-    <CodeView>
-var set "$/data/file.txt" filePath;
-fls xst filePath exists;
+<Card>
+<Oh3 class="notranslate">fls xst</Oh3>
+<Op>Checks if a file or directory exists at a specified path and stores the result ("true" or "false") in a new variable.</Op>
+<CodeView>fls xst (path) (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>path</Ocode>: The path to check (replaces "$" with the system path) (type: VAR).</li>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable to store the result (type: VAR).</li>
+</Oul>
+<CodeView>
+fls xst "$/files/data.txt" exists;
 csl write exists;
-    </CodeView>
-    <Op>
-        This example checks if the "file.txt" file exists in the "data" directory and prints the result to the console.
-    </Op>
-    </Card>
+</CodeView>
+<Op>
+    This example checks if "/system/files/data.txt" exists and prints "true" or "false".
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">zip archive</Oh3>
+<Op>Archives a folder into a ZIP file.</Op>
+<CodeView>zip archive (folderPath) (newZipFilePath)</CodeView>
+<Oul>
+    <li><Ocode>folderPath</Ocode>: The path to the folder to archive (type: VAR).</li>
+    <li><Ocode>newZipFilePath</Ocode>: The path to the new ZIP file (type: VAR).</li>
+</Oul>
+<CodeView>
+zip archive "$/files/myfolder" "$/files/archive.zip";
+</CodeView>
+<Op>
+    This example archives the folder "/system/files/myfolder" into "/system/files/archive.zip".
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">zip extract</Oh3>
+<Op>Extracts a ZIP file into a specified folder.</Op>
+<CodeView>zip extract (zipFilePath) (folderPath)</CodeView>
+<Oul>
+    <li><Ocode>zipFilePath</Ocode>: The path to the ZIP file (type: VAR).</li>
+    <li><Ocode>folderPath</Ocode>: The path to the folder where the archive will be extracted (type: VAR).</li>
+</Oul>
+<CodeView>
+zip extract "$/files/archive.zip" "$/files/extracted";
+</CodeView>
+<Op>
+    This example extracts "/system/files/archive.zip" into "/system/files/extracted".
+</Op>
+</Card>
     
 </div>

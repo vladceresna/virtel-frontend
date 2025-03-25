@@ -12,95 +12,71 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 	import Card from "$lib/components/ui/card/card.svelte";
 
 </script>
+
+
+
 <Oh1>Running</Oh1>
 
-
-
-
-<Oh2>Practical Examples of File Execution and Flow Control</Oh2>
-
-<Op>Objective: Execute different files based on user input.</Op>
+<Oh2>Controlling Execution Flow</Oh2>
+<Op>Objective: Control code execution with conditionals and loops.</Op>
 
 <Oh3>Steps:</Oh3>
 <Oul>
-<li>Read user input:
+<li>Run a file conditionally:
 <CodeView>
-csl read userInput;
+var set "true" condition;
+run if condition "/action.steps";
 </CodeView>
-<li>Check input and execute appropriate file:
+<Oul>
+<li>"condition" is the boolean variable.</li>
+<li>"/action.steps" is the file to run if the condition is true.</li>
+</Oul>
+</li>
+<li>Run a file in a loop:
 <CodeView>
-str eqs userInput "yes" isYes;
-run if isYes "/yes.steps";
-run if "false" isYes "/no.steps";
+var set "true" isRunning;
+run while isRunning "/loop.steps";
+</CodeView>
+<Oul>
+<li>"isRunning" is the loop condition.</li>
+<li>"/loop.steps" is the file to run repeatedly.</li>
+</Oul>
+</li>
+<li>Stop the flow:
+<CodeView>
+run stop;
 </CodeView>
 </li>
 </Oul>
 
-<Op>Result:</Op>
-<Op>Executes "/yes.steps" if input is "yes", otherwise executes "/no.steps".</Op>
-
-<Oh2>Loop with Delay</Oh2>
-<Op>Objective: Continuously execute a file with a delay between iterations.</Op>
+<Oh2>Practical Example</Oh2>
+<Op>Objective: Run a file for each item in a list.</Op>
 
 <Oh3>Steps:</Oh3>
 <Oul>
-<li>Set loop condition:
+<li>Create and populate a list:
 <CodeView>
-var set "true" loopCondition;
+lst new items;
+lst set items "0" "apple";
+lst set items "1" "banana";
 </CodeView>
-<li>Execute file in a loop with delay:
+</li>
+<li>Run a file for each item:
 <CodeView>
-run while loopCondition "/task.steps";
-[/task.steps]
-run pause "5000";
+run each items item "/processItem.steps";
 </CodeView>
 </li>
 </Oul>
-
-<Op>Result:</Op>
-<Op>Executes "/task.steps" every 5 seconds until `loopCondition` is set to "false".</Op>
-
-<Oh2>Full Example: Conditional Execution with Loop and Delay</Oh2>
-<Op>Objective: Combine conditional execution with a loop and delay.</Op>
-
-<Oh3>Steps:</Oh3>
-<Oul>
-<li>Set loop condition:
-<CodeView>
-var set "true" loopCondition;
-</CodeView>
-<li>Set execution flag:
-<CodeView>
-var set "true" runExample;
-</CodeView>
-<li>Execute file in a loop with delay:
-<CodeView>
-run while runExample "/task.steps";
-[/task.steps]
-run pause "5000";
-</CodeView>
-</li>
-</Oul>
-
-<Op>Result:</Op>
-<Op>Executes "/task.steps" every 5 seconds while `runExample` is "true".</Op>
 
 <Oh2>Tips</Oh2>
 <Oul>
-<li>Test your code regularly to ensure there are no errors.</li>
-<li>Choose ports and names carefully to avoid conflicts.</li>
-<li>Comment your code for better understanding.</li>
+<li>Use <Ocode>run pause</Ocode> to introduce delays in execution.</li>
+<li>Be cautious with loops to avoid infinite execution.</li>
+<li>Use <Ocode>run break</Ocode> to exit loops when needed.</li>
 </Oul>
 
 <Oh2>Conclusion</Oh2>
-<Op>Virtel Steps offers versatile commands for executing
-     files and controlling program flow. Use <Ocode>run one</Ocode> 
-     for simple execution, <Ocode>run if</Ocode> and <Ocode>run while</Ocode> 
-     for conditional and loop execution, <Ocode>run flow</Ocode> for background 
-     tasks, and <Ocode>run pause</Ocode> for adding delays.
-     These commands allow you to create dynamic and responsive programs.</Op>
-
-
+<Op>Execution control commands like <Ocode>run if</Ocode>, <Ocode>run while</Ocode>, and <Ocode>run each</Ocode> provide powerful ways to manage flow execution in your Virtel Steps programs.</Op>
 
 
 
@@ -116,83 +92,158 @@ run pause "5000";
 
 <div class="flex flex-col gap-5 *:px-5 *:pb-5">
 
-	<Card>
-    <Oh3 class="notranslate">run one</Oh3>
-    <Op>Executes a file with the specified path.</Op>
-    <CodeView>run one (file)</CodeView>
-    <Oul>
-        <li><Ocode>file</Ocode>: The path to the file to execute.</li>
-    </Oul>
-    <CodeView>
-run one "/example.steps";
-    </CodeView>
-    <Op>
-        This example executes the "example.steps" file.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">run one</Oh3>
+<Op>Runs a file once in the current flow.</Op>
+<CodeView>run one (file)</CodeView>
+<Oul>
+    <li><Ocode>file</Ocode>: The path to the file to run (type: VAR).</li>
+</Oul>
+<CodeView>
+run one "/init.steps";
+</CodeView>
+<Op>
+    This example runs the code in "/init.steps" once.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">run if</Oh3>
-    <Op>Executes a file if the boolean value is true.</Op>
-    <CodeView>run if (boolValue) (file)</CodeView>
-    <Oul>
-        <li><Ocode>boolValue</Ocode>: The boolean value ("true" or "false").</li>
-        <li><Ocode>file</Ocode>: The path to the file to execute.</li>
-    </Oul>
-    <CodeView>
+<Card>
+<Oh3 class="notranslate">run if</Oh3>
+<Op>Runs a file if a boolean value is "true".</Op>
+<CodeView>run if (boolValue) (file)</CodeView>
+<Oul>
+    <li><Ocode>boolValue</Ocode>: The boolean value to check ("true" or "false") (type: VAR).</li>
+    <li><Ocode>file</Ocode>: The path to the file to run (type: VAR).</li>
+</Oul>
+<CodeView>
 var set "true" condition;
-run if condition "/example.steps";
-    </CodeView>
-    <Op>
-        This example executes the "example.steps" file if the value of the <Ocode>condition</Ocode> variable is true.
-    </Op>
-    </Card>
+run if condition "/action.steps";
+</CodeView>
+<Op>
+    This example runs "/action.steps" because "condition" is "true".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">run while</Oh3>
-    <Op>Executes a file while the boolean value is true.</Op>
-    <CodeView>run while (boolValue) (file)</CodeView>
-    <Oul>
-        <li><Ocode>boolValue</Ocode>: The boolean value ("true" or "false").</li>
-        <li><Ocode>file</Ocode>: The path to the file to execute.</li>
-    </Oul>
-    <CodeView>
-var set "true" condition;
-run while condition "/example.steps";
-    </CodeView>
-    <Op>
-        This example executes the "example.steps" file as long as the value of the <Ocode>condition</Ocode> variable is true.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">run while</Oh3>
+<Op>Runs a file in a loop while a boolean value is "true".</Op>
+<CodeView>run while (boolValue) (file)</CodeView>
+<Oul>
+    <li><Ocode>boolValue</Ocode>: The boolean value to check (type: VAR).</li>
+    <li><Ocode>file</Ocode>: The path to the file to run (type: VAR).</li>
+</Oul>
+<CodeView>
+var set "true" isRunning;
+run while isRunning "/loop.steps";
+</CodeView>
+<Op>
+    This example runs "/loop.steps" repeatedly until "isRunning" becomes "false".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">run flow</Oh3>
-    <Op>Starts the execution flow of the file.</Op>
-    <CodeView>run flow (file)</CodeView>
-    <Oul>
-        <li><Ocode>file</Ocode>: The path to the file to start the flow.</li>
-    </Oul>
-    <CodeView>
-run flow "/background.steps";
-    </CodeView>
-    <Op>
-        This example starts the "background.steps" file as a flow.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">run each</Oh3>
+<Op>Runs a file for each element in a list, storing the current element in a variable.</Op>
+<CodeView>run each (valueList) (itemVarName) (file)</CodeView>
+<Oul>
+    <li><Ocode>valueList</Ocode>: The list to iterate over (type: LIST).</li>
+    <li><Ocode>itemVarName</Ocode>: The name of the variable for the current element (type: VAR).</li>
+    <li><Ocode>file</Ocode>: The path to the file to run (type: VAR).</li>
+</Oul>
+<CodeView>
+lst new items;
+lst set items "0" "apple";
+lst set items "1" "banana";
+run each items item "/processItem.steps";
+</CodeView>
+<Op>
+    This example runs "/processItem.steps" for "apple" and "banana".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">run pause</Oh3>
-    <Op>Pauses execution for a specified time.</Op>
-    <CodeView>run pause (time)</CodeView>
-    <Oul>
-        <li><Ocode>time</Ocode>: The delay time in milliseconds.</li>
-    </Oul>
-    <CodeView>
+<Card>
+<Oh3 class="notranslate">run for</Oh3>
+<Op>Runs a file for each index in a range from first to last, storing the index in a variable.</Op>
+<CodeView>run for (first) (last) (indexVarName) (file)</CodeView>
+<Oul>
+    <li><Ocode>first</Ocode>: The starting index (type: VAR).</li>
+    <li><Ocode>last</Ocode>: The ending index (type: VAR).</li>
+    <li><Ocode>indexVarName</Ocode>: The name of the variable for the current index (type: VAR).</li>
+    <li><Ocode>file</Ocode>: The path to the file to run (type: VAR).</li>
+</Oul>
+<CodeView>
+run for "0" "2" i "/printIndex.steps";
+</CodeView>
+<Op>
+    This example runs "/printIndex.steps" for i = 0, 1, and 2.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">run flow</Oh3>
+<Op>Starts a new flow from a file and stores its name in a new variable.</Op>
+<CodeView>run flow (file) (varNewFlowName)</CodeView>
+<Oul>
+    <li><Ocode>file</Ocode>: The path to the file to run in a new flow (type: VAR).</li>
+    <li><Ocode>varNewFlowName</Ocode>: The name of the variable to store the flow name (type: VAR).</li>
+</Oul>
+<CodeView>
+run flow "/background.steps" flowName;
+csl write flowName;
+</CodeView>
+<Op>
+    This example starts a new flow with "/background.steps" and prints its name (e.g., "flow-1").
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">run pause</Oh3>
+<Op>Pauses the execution of the flow for a specified time in milliseconds.</Op>
+<CodeView>run pause (time)</CodeView>
+<Oul>
+    <li><Ocode>time</Ocode>: The pause duration in milliseconds (type: VAR).</li>
+</Oul>
+<CodeView>
+csl write "Starting";
 run pause "1000";
-    </CodeView>
-    <Op>
-        This example pauses execution for 1 second (1000 milliseconds).
-    </Op>
-    </Card>
-    
+csl write "Done";
+</CodeView>
+<Op>
+    This example prints "Starting", waits 1 second, and then prints "Done".
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">run break</Oh3>
+<Op>Breaks the current loop (while, each, for) if the flow is not in "inlife" mode.</Op>
+<CodeView>run break</CodeView>
+<Oul>
+</Oul>
+<CodeView>
+var set "true" isRunning;
+run while isRunning "/loop.steps";
+run break;
+</CodeView>
+<Op>
+    This example breaks out of a while loop immediately.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">run stop</Oh3>
+<Op>Stops the current flow if it is not in "inlife" mode.</Op>
+<CodeView>run stop</CodeView>
+<Oul>
+</Oul>
+<CodeView>
+csl write "Running";
+run stop;
+csl write "This won’t print";
+</CodeView>
+<Op>
+    This example stops the flow after printing "Running".
+</Op>
+</Card>
+
+
 </div>

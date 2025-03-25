@@ -12,112 +12,64 @@ import Oh2 from "$lib/components/typography/oh2.svelte";
 	import Card from "$lib/components/ui/card/card.svelte";
 
 </script>
+
+
+
 <Oh1>System</Oh1>
 
-
-<Oh2>Simple File Manager with Audio and Speech Features</Oh2>
-<Op>Objective: Create a simple file manager that can save text to a file, read from a file, delete a file, play audio, and use text-to-speech for notifications.</Op>
+<Oh2>Managing System Operations</Oh2>
+<Op>Objective: Manage system functions like program management and logging.</Op>
 
 <Oh3>Steps:</Oh3>
 <Oul>
-<li>Save Text to File:
+<li>Get a list of installed programs:
 <CodeView>
-scr get editor "text" content;
-var set "$/data/notes.txt" filePath;
-fls write filePath content;
-tts say2 "Файл збережено!";
+sys apps programsList;
+lst len programsList count;
+csl write count;
 </CodeView>
 <Oul>
-<li>Retrieves the text from the editor.</li>
-<li>Sets the file path.</li>
-<li>Writes the content to the file.</li>
-<li>Notifies the user that the file is saved.</li>
+<li>"programsList" is the list of program identifiers.</li>
+<li>"count" is the number of programs.</li>
 </Oul>
 </li>
-
-<li>Read from File:
+<li>Start a program:
 <CodeView>
-var set "$/data/notes.txt" filePath;
-fls read filePath content;
-scr set editor "text" content;
-tts say2 "Файл відкрито!";
+sys start "vladceresna.virtel.textly";
 </CodeView>
 <Oul>
-<li>Sets the file path.</li>
-<li>Reads the content from the file.</li>
-<li>Displays the content in the editor.</li>
-<li>Notifies the user that the file is opened.</li>
+<li>"vladceresna.virtel.textly" is the program identifier.</li>
 </Oul>
 </li>
-
-<li>Delete File:
+<li>Log a message:
 <CodeView>
-var set "$/data/notes.txt" filePath;
-fls del filePath;
-tts say2 "Файл видалено!";
+csl write "Program started";
 </CodeView>
-<Oul>
-<li>Sets the file path.</li>
-<li>Deletes the file.</li>
-<li>Notifies the user that the file is deleted.</li>
-</Oul>
-</li>
-
-<li>Play Audio File:
-<CodeView>
-spr play "mp3" "$/music/background.mp3";
-</CodeView>
-<Oul>
-<li>Plays the audio file "background.mp3" from the "music" directory.</li>
-</Oul>
-</li>
-
-<li>Text-to-Speech Notification:
-<CodeView>
-tts say2 "Дія виконано!";
-</CodeView>
-<Oul>
-<li>synthesizes and plays the text "Дія виконано!"</li>
-</Oul>
 </li>
 </Oul>
 
-<Op>Full Code:</Op>
+<Oh2>Practical Example</Oh2>
+<Op>Objective: Install a program from a VAR file.</Op>
+
+<Oh3>Steps:</Oh3>
+<Oul>
+<li>Read and install a program:
 <CodeView>
-// Save file
-scr get editor "text" content;
-var set "$/data/notes.txt" filePath;
-fls write filePath content;
-tts say2 "Файл збережено!";
-
-// Open file
-var set "$/data/notes.txt" filePath;
-fls read filePath content;
-scr set editor "text" content;
-tts say2 "Файл відкрито!";
-
-// Delete file
-var set "$/data/notes.txt" filePath;
-fls del filePath;
-tts say2 "Файл видалено!";
-
-// Play audio
-spr play "mp3" "$/music/background.mp3";
-
-// Text-to-speech notification
-tts say2 "Action completed!";
+fls read "$/app.var" varContent;
+sys install "vladceresna.virtel.textly" varContent;
 </CodeView>
+</li>
+</Oul>
 
-<Op>Result:</Op>
-<Op>A simple file manager with the ability to save, open, and delete files, 
-    play audio, and provide voice notifications.</Op>
+<Oh2>Tips</Oh2>
+<Oul>
+<li>Use <Ocode>sys log</Ocode> to retrieve all logs for debugging.</li>
+<li>Regularly back up the system with <Ocode>sys backup</Ocode>.</li>
+<li>Set <Ocode>sys inlife "true"</Ocode> for critical flows that shouldn’t stop.</li>
+</Oul>
 
 <Oh2>Conclusion</Oh2>
-<Op>By integrating file operations, audio playback, and text-to-speech, 
-    you've created a versatile file manager. This program demonstrates the power 
-    and flexibility of Virtel Steps in handling various tasks.</Op>
-
-
+<Op>System commands provide essential tools for managing programs, logs, and system state, ensuring a stable Virtel environment.</Op>
 
 
 
@@ -135,254 +87,373 @@ tts say2 "Action completed!";
 
 
 
-    <Card>
-    <Oh3 class="notranslate">spr play</Oh3>
-    <Op>Plays an audio file with the specified path and type.</Op>
-    <CodeView>spr play (type) (path)</CodeView>
-    <Oul>
-        <li><Ocode>type</Ocode>: The audio file type ("mp3" or "wav").</li>
-        <li><Ocode>path</Ocode>: The path to the audio file. Can contain the special symbol `$`, which will be replaced with the system path.</li>
-    </Oul>
-    <CodeView>
-spr play "mp3" "$/music/song.mp3";
-    </CodeView>
-    <Op>
-        This example plays the "song.mp3" file from the "music" directory in MP3 format.
-    </Op>
-    </Card>
-    
-    <Card>
-    <Oh3 class="notranslate">llm ask</Oh3>
-    <Op>Gets an answer to a question or text.</Op>
-    <CodeView>llm ask (text) (newResVarName)</CodeView>
-    <Oul>
-        <li><Ocode>text</Ocode>: The text or question to process.</li>
-        <li><Ocode>newResVarName</Ocode>: The new variable to store the result.</li>
-    </Oul>
-    <CodeView>
-var set "Яка погода сьогодні?" question;
-llm ask question answer;
-csl write answer;
-    </CodeView>
-    <Op>
-        This example gets an answer to the question "Яка погода сьогодні?" and prints it to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys apps</Oh3>
+<Op>Gets a list of all available programs in the system and stores their identifiers in a new list.</Op>
+<CodeView>sys apps (newListName)</CodeView>
+<Oul>
+    <li><Ocode>newListName</Ocode>: The name of the new list variable where the program identifiers will be stored (type: LIST).</li>
+</Oul>
+<CodeView>
+sys apps programsList;
+lst len programsList count;
+csl write count;
+</CodeView>
+<Op>
+    This example retrieves the list of installed programs, gets its length, and prints the number of programs to the console.
+</Op>
+</Card>
 
-
-	<Card>
-    <Oh3 class="notranslate">tts say2</Oh3>
-    <Op>Converts text to speech and plays it.</Op>
-	<Oul>
-		<li>If no language is specified, the default system language is used.</li>
-		<li>The text is cached in an MP3 file for quick access in the future.</li>
-	</Oul>
-    <CodeView>tts say2 (text)</CodeView>
-    <Oul>
-        <li><Ocode>text</Ocode>: The text to be synthesized into speech.</li>
-    </Oul>
-    <CodeView>
-tts say2 "Привіт, світ!";
-    </CodeView>
-    <Op>
-        This example synthesizes the text "Привіт, світ!" into speech and plays it.
-    </Op>
-    </Card>
-
-    <Card>
-    <Oh3 class="notranslate">tts say</Oh3>
-    <Op>Converts text to speech with the option to select the language.</Op>
-	<Oul>
-		<li>If no language is specified, the default system language is used.</li>
-		<li>The text is cached in an MP3 file for quick access in the future.</li>
-	</Oul>
-    <CodeView>tts say (text) [language]</CodeView>
-    <Oul>
-        <li><Ocode>text</Ocode>: The text to be synthesized into speech.</li>
-        <li><Ocode>language</Ocode>: The language code (optional, the system language is used by default).</li>
-    </Oul>
-    <CodeView>
-tts say "Hello, world!" "en-US";
-    </CodeView>
-    <Op>
-        This example synthesizes the text "Hello, world!" in English and plays it.
-    </Op>
-    </Card>
-
-
-
-	<Card>
-    <Oh3 class="notranslate">sys apps</Oh3>
-    <Op>Gets a list of applications in the system.</Op>
-    <CodeView>sys apps (newListName)</CodeView>
-    <Oul>
-        <li><Ocode>newListName</Ocode>: The new list variable to store the application IDs.</li>
-    </Oul>
-    <CodeView>
-sys apps appList;
-lst get appList "0" firstApp;
-csl write firstApp;
-    </CodeView>
-    <Op>
-        This example gets a list of applications and prints the ID of the first application to the console.
-    </Op>
-    </Card>
-
-    <Card>
-    <Oh3 class="notranslate">sys files</Oh3>
-    <Op>Gets the path to the user's files.</Op>
-    <CodeView>sys files (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the path to the user's files.</li>
-    </Oul>
-    <CodeView>
+<Card>
+<Oh3 class="notranslate">sys files</Oh3>
+<Op>Gets the path to the user's files directory and stores it in a new variable.</Op>
+<CodeView>sys files (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable where the path will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
 sys files userFilesPath;
 csl write userFilesPath;
-    </CodeView>
-    <Op>
-        This example gets the path to the user's files and prints it to the console.
-    </Op>
-    </Card>
+</CodeView>
+<Op>
+    This Medicaid example retrieves the user files path and prints it to the console.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys flowname</Oh3>
-    <Op>Gets the name of the current flow.</Op>
-    <CodeView>sys flowname (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the flow name.</li>
-    </Oul>
-    <CodeView>
-sys flowname currentFlow;
-csl write currentFlow;
-    </CodeView>
-    <Op>
-        This example gets the name of the current flow and prints it to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys flowname</Oh3>
+<Op>Gets the name of the current flow and stores it in a new variable.</Op>
+<CodeView>sys flowname (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable where the flow name will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+sys flowname currentFlowName;
+csl write currentFlowName;
+</CodeView>
+<Op>
+    This example retrieves the current flow name (e.g., "flow-0") and prints it to the console.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys log</Oh3>
-    <Op>Gets the logs as a string.</Op>
-    <CodeView>sys log (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the logs.</li>
-    </Oul>
-    <CodeView>
-sys log applicationLog;
-csl write applicationLog;
-    </CodeView>
-    <Op>
-        This example gets the logs and prints them to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys log</Oh3>
+<Op>Gets all program logs as a single string, separated by newlines, and stores it in a new variable.</Op>
+<CodeView>sys log (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable where the logs will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+sys log logs;
+fls write "$/logs.txt" logs;
+</CodeView>
+<Op>
+    This example retrieves the logs and saves them to a file at "/system/logs.txt".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys start</Oh3>
-    <Op>Starts an application by its ID.</Op>
-    <CodeView>sys start (appId)</CodeView>
-    <Oul>
-        <li><Ocode>appId</Ocode>: The ID of the application to start.</li>
-    </Oul>
-    <CodeView>
-sys start "calculator";
-    </CodeView>
-    <Op>
-        This example starts the application with the ID "calculator".
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys start</Oh3>
+<Op>Starts a program by its appId.</Op>
+<CodeView>sys start (appId)</CodeView>
+<Oul>
+    <li><Ocode>appId</Ocode>: The identifier of the program to start (type: VAR).</li>
+</Oul>
+<CodeView>
+sys start "vladceresna.virtel.textly";
+</CodeView>
+<Op>
+    This example starts the "vladceresna.virtel.textly" program.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys homedir</Oh3>
-    <Op>Gets the system home path.</Op>
-    <CodeView>sys homedir (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the system home path.</li>
-    </Oul>
-    <CodeView>
-sys homedir homeDirectory;
-csl write homeDirectory;
-    </CodeView>
-    <Op>
-        This example gets the system home path and prints it to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys homedir</Oh3>
+<Op>Gets the path to the system's home directory and stores it in a new variable.</Op>
+<CodeView>sys homedir (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable where the path will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+sys homedir homeDir;
+csl write homeDir;
+</CodeView>
+<Op>
+    This example retrieves the system home directory path (e.g., "/system") and prints it to the console.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys install</Oh3>
-    <Op>Installs an application.</Op>
-    <CodeView>sys install (appId) (contentVAR)</CodeView>
-    <Oul>
-        <li><Ocode>appId</Ocode>: The ID of the application to install.</li>
-        <li><Ocode>contentVAR</Ocode>: The variable containing the application content.</li>
-    </Oul>
-    <CodeView>
-var set "[/start.steps]
-csl write \"Hello\";
-[end]
-" appContent;
-sys install "author.group.appname" appContent;
-    </CodeView>
-    <Op>
-        This example installs the application with the ID "helloApp" with content that prints "Hello".
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys install</Oh3>
+<Op>Installs a program from a VAR file contained in a variable.</Op>
+<CodeView>sys install (appId) (contentVAR)</CodeView>
+<Oul>
+    <li><Ocode>appId</Ocode>: The identifier of the program to install (type: VAR).</li>
+    <li><Ocode>contentVAR</Ocode>: The variable containing the VAR file content of the program (type: VAR).</li>
+</Oul>
+<CodeView>
+fls read "$/app.var" varContent;
+sys install "vladceresna.virtel.textly" varContent;
+</CodeView>
+<Op>
+    This example reads a VAR file from "/system/app.var" and installs it as "vladceresna.virtel.textly".
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">sys pack</Oh3>
-    <Op>Packs an application.</Op>
-    <CodeView>sys pack (appId) (contentVARNewVarName)</CodeView>
-    <Oul>
-        <li><Ocode>appId</Ocode>: The ID of the application to pack.</li>
-        <li><Ocode>contentVARNewVarName</Ocode>: The variable where the packed application content will be stored.</li>
-    </Oul>
-    <CodeView>
-sys pack "helloApp" packedApp;
-csl write packedApp;
-    </CodeView>
-    <Op>
-        This example packs the application with the ID "helloApp" and prints the packed content to the console.
-    </Op>
-    </Card>
+<Card>
+<Oh3 class="notranslate">sys pack</Oh3>
+<Op>Packages a program by its appId into a VAR file and stores it in a new variable.</Op>
+<CodeView>sys pack (appId) (contentVARNewVarName)</CodeView>
+<Oul>
+    <li><Ocode>appId</Ocode>: The identifier of the program to package (type: VAR).</li>
+    <li><Ocode>contentVARNewVarName</Ocode>: The name of the new variable where the VAR file content will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+sys pack "vladceresna.virtel.textly" packedVar;
+fls write "$/packedApp.var" packedVar;
+</CodeView>
+<Op>
+    This example packages "vladceresna.virtel.textly" into a VAR file and saves it to "/system/packedApp.var".
+</Op>
+</Card>
 
+<Card>
+<Oh3 class="notranslate">sys clear</Oh3>
+<Op>Clears the current flow's data and removes it from the program.</Op>
+<CodeView>sys clear (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of a variable (not used in the current implementation but required by syntax).</li>
+</Oul>
+<CodeView>
+sys clear "unusedVar";
+</CodeView>
+<Op>
+    This example clears the current flow's data and removes it from the program.
+</Op>
+</Card>
 
-	<Card>
-    <Oh3 class="notranslate">dtm now</Oh3>
-    <Op>Gets the current time in milliseconds since the Unix epoch.</Op>
-    <CodeView>dtm now (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the current time.</li>
-    </Oul>
-    <CodeView>
+<Card>
+<Oh3 class="notranslate">sys backup</Oh3>
+<Op>Creates a backup of the system to a specified file.</Op>
+<CodeView>sys backup (filePath)</CodeView>
+<Oul>
+    <li><Ocode>filePath</Ocode>: The path to the file where the backup will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+sys backup "$/backup/system.bak";
+</CodeView>
+<Op>
+    This example creates a system backup at "/system/backup/system.bak".
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">sys restore</Oh3>
+<Op>Restores the system from a backup file.</Op>
+<CodeView>sys restore (filePath)</CodeView>
+<Oul>
+    <li><Ocode>filePath</Ocode>: The path to the backup file (type: VAR).</li>
+</Oul>
+<CodeView>
+sys restore "$/backup/system.bak";
+</CodeView>
+<Op>
+    This example restores the system from "/system/backup/system.bak".
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">sys inlife</Oh3>
+<Op>Sets the "inlife" mode for the flow, determining whether it can be stopped (true prevents stopping).</Op>
+<CodeView>sys inlife (value)</CodeView>
+<Oul>
+    <li><Ocode>value</Ocode>: A boolean value ("true" or "false") to set the mode (type: VAR).</li>
+</Oul>
+<CodeView>
+sys inlife "true";
+run pause "5000";
+sys inlife "false";
+</CodeView>
+<Op>
+    This example sets the flow to "inlife" mode for 5 seconds, making it unstoppable, then disables it.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">sys settings</Oh3>
+<Op>Opens the system settings interface.</Op>
+<CodeView>sys settings</CodeView>
+<Oul>
+</Oul>
+<CodeView>
+sys settings;
+</CodeView>
+<Op>
+    This example opens the Virtel system settings window.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">sys open-app</Oh3>
+<Op>Opens a program by its appId.</Op>
+<CodeView>sys open-app (appId)</CodeView>
+<Oul>
+    <li><Ocode>appId</Ocode>: The identifier of the program to open (type: VAR).</li>
+</Oul>
+<CodeView>
+sys open-app "vladceresna.virtel.textly";
+</CodeView>
+<Op>
+    This example opens the "vladceresna.virtel.textly" program.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">dtm now</Oh3>
+<Op>Gets the current time in milliseconds since the epoch and stores it in a new variable.</Op>
+<CodeView>dtm now (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable where the time will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
 dtm now currentTime;
 csl write currentTime;
-    </CodeView>
-    <Op>
-        This example gets the current time and prints it to the console.
-    </Op>
-    </Card>
+</CodeView>
+<Op>
+    This example retrieves the current time (e.g., "1698777600000") and prints it to the console.
+</Op>
+</Card>
 
-    <Card>
-    <Oh3 class="notranslate">dtm format</Oh3>
-    <Op>Formats the given time in the specified format and time zone. 
-		The default time zone is used if not specified.
-	</Op>
-    <CodeView>dtm format (now) (format) [timezone] (newVarName)</CodeView>
-    <Oul>
-        <li><Ocode>now</Ocode>: The time in milliseconds since the Unix epoch.</li>
-        <li><Ocode>format</Ocode>: The output format of the time.</li>
-        <li><Ocode>timezone</Ocode>: The name of the time zone (optional, system default is used).</li>
-        <li><Ocode>newVarName</Ocode>: The new variable to store the formatted time.</li>
-    </Oul>
-    <CodeView>
+<Card>
+<Oh3 class="notranslate">dtm format</Oh3>
+<Op>Formats a time in milliseconds into a string based on a pattern and optionally a timezone, storing the result in a new variable.</Op>
+<CodeView>dtm format (now) (format) [/timezone/] (contentVARNewVarName)</CodeView>
+<Oul>
+    <li><Ocode>now</Ocode>: The time in milliseconds (type: VAR).</li>
+    <li><Ocode>format</Ocode>: The date format pattern (e.g., "yyyy-MM-dd") (type: VAR).</li>
+    <li><Ocode>/timezone/</Ocode>: Optional timezone (e.g., "UTC", "Europe/Kiev") (type: VAR).</li>
+    <li><Ocode>contentVARNewVarName</Ocode>: The name of the new variable for the formatted string (type: VAR).</li>
+</Oul>
+<CodeView>
 dtm now currentTime;
-dtm format currentTime "yyyy-MM-dd HH:mm:ss" "UTC" formattedTime;
-csl write formattedTime;
-    </CodeView>
-    <Op>
-        This example formats the current time in the "yyyy-MM-dd HH:mm:ss" format in the UTC time zone and prints it to the console.
-    </Op>
-    </Card>
+dtm format currentTime "yyyy-MM-dd" "UTC" formattedDate;
+csl write formattedDate;
+</CodeView>
+<Op>
+    This example gets the current time, formats it as "yyyy-MM-dd" in UTC (e.g., "2023-10-31"), and prints it.
+</Op>
+</Card>
 
+<Card>
+<Oh3 class="notranslate">csl error</Oh3>
+<Op>Logs an error message and throws an exception, stopping the flow execution.</Op>
+<CodeView>csl error (text)</CodeView>
+<Oul>
+    <li><Ocode>text</Ocode>: The error message to log and throw (type: VAR).</li>
+</Oul>
+<CodeView>
+csl error "Something went wrong";
+</CodeView>
+<Op>
+    This example logs "Something went wrong" as an error and stops the flow with an exception.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">csl write</Oh3>
+<Op>Writes a message to the program logs.</Op>
+<CodeView>csl write (text)</CodeView>
+<Oul>
+    <li><Ocode>text</Ocode>: The message to write to the logs (type: VAR).</li>
+</Oul>
+<CodeView>
+csl write "Program started";
+</CodeView>
+<Op>
+    This example writes "Program started" to the logs.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">csl read</Oh3>
+<Op>Reads user input from the console and stores it in a variable. It allows you to interact with the user.</Op>
+<CodeView>csl read (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>newVarName</Ocode>: The name of the variable where the read value will be stored (type: VAR).</li>
+</Oul>
+<CodeView>
+csl read userInput;
+csl write userInput;
+</CodeView>
+<Op>
+    This example reads user input (e.g., "Hello") and prints it back to the console.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">stg set</Oh3>
+<Op>Stores a value in the program's storage under a specified key.</Op>
+<CodeView>stg set (name) (value)</CodeView>
+<Oul>
+    <li><Ocode>name</Ocode>: The key to store the value under (type: VAR).</li>
+    <li><Ocode>value</Ocode>: The value to store (type: VAR).</li>
+</Oul>
+<CodeView>
+stg set "userName" "John";
+</CodeView>
+<Op>
+    This example stores "John" under the key "userName" in the program's storage.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">stg get</Oh3>
+<Op>Retrieves a value from the program's storage by key and stores it in a new variable.</Op>
+<CodeView>stg get (name) (newVarName)</CodeView>
+<Oul>
+    <li><Ocode>name</Ocode>: The key to retrieve the value from (type: VAR).</li>
+    <li><Ocode>newVarName</Ocode>: The name of the new variable to store the value (type: VAR).</li>
+</Oul>
+<CodeView>
+stg set "userName" "John";
+stg get "userName" retrievedName;
+csl write retrievedName;
+</CodeView>
+<Op>
+    This example retrieves "John" from "userName" and prints it.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">stg del</Oh3>
+<Op>Deletes a value from the program's storage by key.</Op>
+<CodeView>stg del (name)</CodeView>
+<Oul>
+    <li><Ocode>name</Ocode>: The key to delete (type: VAR).</li>
+</Oul>
+<CodeView>
+stg set "userName" "John";
+stg del "userName";
+</CodeView>
+<Op>
+    This example deletes the "userName" key from the storage.
+</Op>
+</Card>
+
+<Card>
+<Oh3 class="notranslate">tts say2</Oh3>
+<Op>Speaks text using cached MP3 files in "/virtel/tts-cache", generating the file if it doesn’t exist.</Op>
+<CodeView>tts say2 (text)</CodeView>
+<Oul>
+    <li><Ocode>text</Ocode>: The text to speak (type: VAR).</li>
+</Oul>
+<CodeView>
+tts say2 "Hello";
+</CodeView>
+<Op>
+    This example speaks "Hello" through audio output.
+</Op>
+</Card>
 
 
     
