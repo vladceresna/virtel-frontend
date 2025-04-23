@@ -1,7 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
+<urlset
+  xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
+  xmlns:xhtml="https://www.w3.org/1999/xhtml"
+  xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
+  xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
+  xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
+>
 <url>
 <loc>https://virtel.netlify.app/</loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
@@ -13,7 +19,7 @@
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://virtel.netlify.app/docs/2.3.x</loc>
+<loc>https://virtel.netlify.app/docs/3.x.x</loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.80</priority>
 </url>
@@ -29,73 +35,73 @@
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.80</priority>
 </url>
 <url>
-<loc>https://virtel.netlify.app/docs/2.3.x/installing</loc>
+<loc>https://virtel.netlify.app/docs/3.x.x/installing</loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
-<loc>https://virtel.netlify.app/docs/2.3.x/devdocs</loc>
+<loc>https://virtel.netlify.app/docs/3.x.x/devdocs</loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/varsandlists
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/varsandlists
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/data
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/data
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/screen
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/screen
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/running
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/running
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/files
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/files
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/system
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/system
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/steps/network
+https://virtel.netlify.app/docs/3.x.x/devdocs/steps/network
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
 </url>
 <url>
 <loc>
-https://virtel.netlify.app/docs/2.3.x/devdocs/complex
+https://virtel.netlify.app/docs/3.x.x/devdocs/complex
 </loc>
 <lastmod>2025-02-10T20:32:57+00:00</lastmod>
 <priority>0.64</priority>
