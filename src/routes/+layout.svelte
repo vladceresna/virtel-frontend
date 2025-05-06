@@ -35,7 +35,7 @@
   <ModeWatcher />
   <Toaster />
 
-  <div class="flex min-h-screen w-full flex-col">
+  <div class="font-inter flex min-h-screen w-full flex-col">
 	<div class="relative justify-center bg-primary p-2 flex items-center border-b gap-1 px-4 md:px-6 bg-primary supports-[backdrop-filter]:bg-primary backdrop-blur flex md:flex-row flex-col"
 	>
 		<h4 class="leading-0 font-bold text-white">

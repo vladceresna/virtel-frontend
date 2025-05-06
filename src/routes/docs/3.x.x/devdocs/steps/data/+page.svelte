@@ -300,6 +300,146 @@ csl write result;
     This example divides 100 by 2 and then by 5, storing "10" in "result" and printing it.
 </Op>
 </Card>
+<Card>
+    <Oh3 class="notranslate">mat eqs</Oh3>
+    <Op>Checks if two numbers are equal.</Op>
+    <CodeView>mat eqs (a) (b) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>a</Ocode>: The first number.</li>
+        <li><Ocode>b</Ocode>: The second number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
+    </Oul>
+    <CodeView>
+var set "5" a;
+var set "5" b;
+mat eqs a b isEqual;
+csl write isEqual;
+    </CodeView>
+    <Op>
+        This example checks if the numbers 5 and 5 are equal, and stores the result in the <Ocode>isEqual</Ocode> variable, which will be "true".
+    </Op>
+    </Card>
+
+
+    <Card>
+    <Oh3 class="notranslate">mat grtr</Oh3>
+    <Op>Checks if the first number is greater than the second number.</Op>
+    <CodeView>mat grtr (a) (b) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>a</Ocode>: The first number.</li>
+        <li><Ocode>b</Ocode>: The second number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
+    </Oul>
+    <CodeView>
+var set "10" a;
+var set "5" b;
+mat grtr a b isGreater;
+csl write isGreater;
+    </CodeView>
+    <Op>
+        This example checks if 10 is greater than 5, and stores the result in the <Ocode>isGreater</Ocode> variable, which will be "true".
+    </Op>
+    </Card>
+
+    <Card>
+    <Oh3 class="notranslate">mat less</Oh3>
+    <Op>Checks if the first number is less than the second number.</Op>
+    <CodeView>mat less (a) (b) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>a</Ocode>: The first number.</li>
+        <li><Ocode>b</Ocode>: The second number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
+    </Oul>
+    <CodeView>
+var set "5" a;
+var set "10" b;
+mat less a b isLess;
+csl write isLess;
+    </CodeView>
+    <Op>
+        This example checks if 5 is less than 10, and stores the result in the <Ocode>isLess</Ocode> variable, which will be "true".
+    </Op>
+    </Card>
+
+    <Card>
+    <Oh3 class="notranslate">mat grtreqs</Oh3>
+    <Op>Checks if the first number is greater than or equal to the second number.</Op>
+    <CodeView>mat grtreqs (a) (b) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>a</Ocode>: The first number.</li>
+        <li><Ocode>b</Ocode>: The second number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
+    </Oul>
+    <CodeView>
+var set "10" a;
+var set "5" b;
+mat grtreqs a b isGreaterOrEqual;
+csl write isGreaterOrEqual;
+    </CodeView>
+    <Op>
+        This example checks if 10 is greater than or equal to 5, and stores the result in the <Ocode>isGreaterOrEqual</Ocode> variable, which will be "true".
+    </Op>
+    </Card>
+
+    <Card>
+    <Oh3 class="notranslate">mat lesseqs</Oh3>
+    <Op>Checks if the first number is less than or equal to the second number.</Op>
+    <CodeView>mat lesseqs (a) (b) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>a</Ocode>: The first number.</li>
+        <li><Ocode>b</Ocode>: The second number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result (boolean as a string).</li>
+    </Oul>
+    <CodeView>
+var set "5" a;
+var set "10" b;
+mat lesseqs a b isLessOrEqual;
+csl write isLessOrEqual;
+    </CodeView>
+    <Op>
+        This example checks if 5 is less than or equal to 10, and stores the result in the <Ocode>isLessOrEqual</Ocode> variable, which will be "true".
+    </Op>
+    </Card>
+
+
+    <Card>
+    <Oh3 class="notranslate">mat random</Oh3>
+    <Op>Generates a random number within a given range.</Op>
+    <CodeView>mat random (min) (max) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>min</Ocode>: The minimum value.</li>
+        <li><Ocode>max</Ocode>: The maximum value.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result.</li>
+    </Oul>
+    <CodeView>
+mat random 1 10 randomNumber;
+csl write randomNumber;
+    </CodeView>
+    <Op>
+        This example generates a random number between 1 and 10 and prints it to the console.
+    </Op>
+    </Card>
+
+    <Card>
+    <Oh3 class="notranslate">mat int</Oh3>
+    <Op>Converts a floating-point number to an integer.</Op>
+    <CodeView>mat int (numberDouble) (newVarName)</CodeView>
+    <Oul>
+        <li><Ocode>numberDouble</Ocode>: The floating-point number.</li>
+        <li><Ocode>newVarName</Ocode>: The new variable to store the result.</li>
+    </Oul>
+    <CodeView>
+var set "5.9" doubleNumber;
+mat int doubleNumber result;
+csl write result;
+    </CodeView>
+    <Op>
+        This example converts 5.9 to 5 and stores the result in the <Ocode>result</Ocode> variable.
+    </Op>
+    </Card>
+
+
+
 
 <Card>
 <Oh3 class="notranslate">bln not</Oh3>
