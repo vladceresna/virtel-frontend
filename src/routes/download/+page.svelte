@@ -27,7 +27,8 @@
 <div class="flex md:flex-row flex-col gap-5">
   <DownloadOption 
   url="https://github.com/vladceresna/virtel/releases/download/3.3.0-beta/com.vladceresna.virtel-3.3.0-android.apk"
-  os="Android"
+  os="Android
+  (Android 14 is not supported now)"
   format="APK"
   version="3.3.0"
   weight="21 MB"
