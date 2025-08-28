@@ -19,8 +19,10 @@
 		<Button href="/download">Download</Button>
 		<Button href="/docs" variant="secondary">Docs</Button>
 	</div>
-	<div class="mx-auto flex gap-2">
-		<Button class="my-auto font-bold" variant="outline" href="/about">Follow us</Button>
+	<div class="mx-auto flex flex-wrap justify-center gap-2">
+		<Button class="my-auto w-full font-bold md:w-auto" variant="outline" href="/about"
+			>Join us</Button
+		>
 		<Button variant="outline" size="icon" href="https://discord.gg/hNSyTvuy2v">
 			<img src="discord.svg" alt="Discord" class="h-4 w-4 dark:invert" />
 		</Button>
