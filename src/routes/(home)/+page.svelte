@@ -18,8 +18,7 @@
 	<div class="align-center flex flex-wrap justify-center gap-2">
 		<Button href="/download">Download</Button>
 		<Button href="/docs" variant="secondary">Docs</Button>
-        <a class="dbox-donation-page-button" href="https://donorbox.org/help-buy-macbook-for-building-virtel-on-macos-and-ios?default_interval=o" style="background: rgb(46, 204, 113); color: rgb(255, 255, 255); text-decoration: none; font-family: Verdana, sans-serif; display: flex; gap: 8px; width: fit-content; font-size: 14px; border-radius: 15px; line-height: 21px; padding: 6px 16px;"><img src="https://donorbox.org/images/white_logo.svg">Donate</a>
-	</div>
+    </div>
 	<div class="mx-auto flex flex-wrap justify-center gap-2">
 		<Button class="my-auto w-full font-bold md:w-auto" variant="outline" href="/about"
 			>Join us</Button
