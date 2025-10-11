@@ -18,7 +18,7 @@
 	<div class="align-center flex flex-wrap justify-center gap-2">
 		<Button href="/download">Download</Button>
 		<Button href="/docs" variant="secondary">Docs</Button>
-	</div>
+    </div>
 	<div class="mx-auto flex flex-wrap justify-center gap-2">
 		<Button class="my-auto w-full font-bold md:w-auto" variant="outline" href="/about"
 			>Join us</Button
