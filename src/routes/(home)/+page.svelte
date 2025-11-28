@@ -6,14 +6,14 @@
 </script>
 
 <div class="grid grid-cols-1 gap-5 py-12 text-center">
-	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
-		Virtel. Universal Runtime
+	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl bg-clip-text text-transparent bg-gradient-to-b from-foreground to-muted-foreground/70">
+		Virtel. Universal Apps Box
 	</h1>
 	<h4
 		class="mx-auto max-w-4xl scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
 	>
 		Build full-fledged applications that run everywhere in a clean system.
-		<br />Work and websurf in clean and vibe ecosystem.
+		<br />Work and websurf in really clean and vibe ecosystem.
 	</h4>
 	<div class="align-center flex flex-wrap justify-center gap-2">
 		<Button href="/download">Download</Button>
@@ -55,85 +55,123 @@
 >
 </iframe>
 
-<div class="flex flex-col place-content-center justify-center gap-10 p-10 align-middle md:flex-row">
-	<Card.Root class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<Card.Header>
-			<Card.Title class="text-3xl">Simple. Expressive. Fast.</Card.Title>
-			<Card.Description class="text-xl"
-				>Build beautiful, complex UIs with code that reads like a sentence. Virtel combines a
-				declarative component system with a utility-first design philosophy.</Card.Description
-			>
-		</Card.Header>
-		<Card.Content>
-			<div>
-				- This is not just a website. It's a real app.<br />
-				- Every element is a native, high-performance component.<br />
-				<br />
-				<CodeView>csl write "Welcome to the next evolution of apps!";</CodeView>
-			</div>
-		</Card.Content>
-		<Card.Footer>
-			<Button href="/docs/3.x.x/devdocs/steps/screen">Explore the UI Framework</Button>
-		</Card.Footer>
-	</Card.Root>
-	<div
-		class="w-full flex-1 justify-center rounded-lg border bg-[#2A7B9B] bg-gradient-to-r from-[#2A7B9B] via-[#57C785] to-[#EDDD53] align-middle"
-	></div>
+
+<hr>
+
+<div class="grid grid-cols-1 gap-5 py-12 text-center ">
+	<h1 class="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
+		Apps shouldn’t weigh 300 MB in 2025 😤
+	</h1>
+	<h4
+		class="mx-auto max-w-4xl scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground"
+	>
+		Virtel lets you build or use real apps that are 20-50 KB and run literally everywhere.
+    	No "node_modules". No battery drain. No bullshit.
+	</h4>
+	<div class="align-center flex flex-wrap justify-center gap-2">
+		<Button size="lg" href="/download">Download Alpha →</Button>
+    	<Button size="lg" variant="secondary" href="https://t.me/virtelx">Join the vibe</Button>
+    </div>
 </div>
-<div
-	class="flex flex-col place-content-center justify-center gap-10 p-10 align-middle md:flex-row-reverse"
->
-	<Card.Root class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<Card.Header>
-			<Card.Title class="text-3xl">One Platform. Any Application.</Card.Title>
-			<Card.Description class="text-xl"
-				>Stop choosing between a "website," a "desktop app," or a "game engine." Virtel's multi-API
-				architecture lets you build anything you can imagine.</Card.Description
-			>
-		</Card.Header>
-		<Card.Content></Card.Content>
-		<Card.Footer>
-			<Button href="/docs">Learn About the Architecture</Button>
-		</Card.Footer>
-	</Card.Root>
-	<div
-		class="w-full flex-1 justify-center rounded-lg border bg-[#833AB4] bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCB045] align-middle"
-	></div>
-</div>
-<div class="flex flex-col place-content-center justify-center gap-10 p-10 align-middle md:flex-row">
-	<Card.Root class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<Card.Header>
-			<Card.Title class="text-3xl">Get ready parts of Steps code!</Card.Title>
-			<Card.Description class="text-xl"
-				>Learn Steps with Skills! Open source components on our website</Card.Description
-			>
-		</Card.Header>
-		<Card.Footer>
-			<Button href="/skills">Learn more about Skills</Button>
-		</Card.Footer>
-	</Card.Root>
-	<div class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<img alt="skills-preview" src="skills-preview.png" class="h-full w-full rounded-lg" />
-	</div>
-</div>
+
+<hr>
+
+<section class="py-20 px-6">
+  <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+    <div>
+      <h3 class="text-4xl font-bold">Finally… UI code that doesn’t hurt your brain 🤯</h3>
+      <p class="mt-6 text-xl text-muted-foreground leading-relaxed">
+        Write beautiful, complex screens in plain sentences.<br />
+        Zero useEffect-hell, zero 2 GB node_modules, zero pain.
+      </p>
+      <CodeView>
+csl write "Welcome to sanity 👋";</CodeView>
+      <Button class="mt-6" href="/docs/3.x.x/devdocs/steps/screen">
+        Explore Steps UI →
+      </Button>
+    </div>
+    <div class="rounded-2xl overflow-hidden border shadow-2xl">
+      <img src="/simplicity.png" alt="Steps UI preview" class="w-full" />
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="py-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+    <div class="order-2 md:order-1 rounded-2xl overflow-hidden border shadow-2xl">
+      <img src="/crossplatform.png" alt="Same app on phone & desktop" />
+    </div>
+    <div class="order-1 md:order-2">
+      <h3 class="text-4xl font-bold">One file. Every device. 🚀</h3>
+      <p class="mt-6 text-xl text-muted-foreground leading-relaxed">
+        Phone, Tablet, Laptop, Old PC - same 30 KB file just works.<br />
+        No “Android version”, no “Windows build”, no excuses.
+      </p>
+      <Button class="mt-6" href="/docs/architecture">How it actually works</Button>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="py-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+    <div>
+      <h3 class="text-4xl font-bold">Steal code like a pro 🧩</h3>
+      <p class="mt-6 text-xl text-muted-foreground leading-relaxed">
+        Skills = 100% open-source ready components.<br />
+        Copy 5 lines → instant chat, timer, meme generator, todo, etc.
+      </p>
+      <Button class="mt-6" href="/skills">Browse all Skills →</Button>
+    </div>
+    <div class="rounded-2xl overflow-hidden border">
+      <img src="/skills-preview.png" alt="Skills gallery" class="w-full" />
+    </div>
+  </div>
+</section>
 <video controls autoplay name="media" class="mx-10 rounded-2xl border md:h-[30rem]">
 	<source src="/linux-virtel-preview.webm" type="video/webm" />
 	<track kind="captions" label="English" src="/english.vtt" srclang="en" default />
 </video>
-<div class="flex flex-col place-content-center justify-center gap-10 p-10 align-middle md:flex-row">
-	<Card.Root class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<Card.Header>
-			<Card.Title class="text-3xl">Safe execution enviroment!</Card.Title>
-			<Card.Description class="text-xl"
-				>Isolated. Open Source.<br />
-				Your powerful, safe and secure isolated crossplatform virtual environment
-			</Card.Description>
-		</Card.Header>
-		<Card.Footer>
-			<Button href="/docs">Learn more about Virtel</Button>
-		</Card.Footer>
-	</Card.Root>
-	<div class="w-full flex-1 justify-center rounded-lg border align-middle">
-		<img alt="virtel-preview" src="virtel-preview.png" class="h-full w-full rounded-lg" />
-	</div>
+
+
+<section class="py-20">
+  <div class="grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto px-6">
+    <div class="rounded-2xl overflow-hidden border shadow-2xl">
+      <img src="/sandbox.png" alt="Sandbox illustration" />
+    </div>
+    <div>
+      <h3 class="text-4xl font-bold">Apps you can actually trust 🛡</h3>
+      <p class="mt-6 text-lg text-muted-foreground leading-relaxed">
+        Every app runs in its own sandbox.<br />
+        • Open source<br />
+        • No creepy trackers<br />
+        • Can’t touch your files without permission<br />
+        • No hidden ads ever
+      </p>
+      <Button class="mt-6" href="/docs/">Security details</Button>
+    </div>
+  </div>
+</section>
+
+
+<div class="py-32 text-center bg-gradient-to-t from-background to-muted/30 rounded-[4rem]">
+  <h2 class="text-5xl md:text-7xl font-black">
+    A 17-year-old just cooked something<br />
+    corporations are scared of 🤯
+  </h2>
+  <p class="mt-8 text-2xl text-muted-foreground">
+    Be part of it before it’s mainstream.
+  </p>
+  <div class="mt-10 flex flex-wrap justify-center gap-6">
+    <Button size="lg" className="text-lg px-8" href="/download">
+      Download Virtel Alpha
+    </Button>
+    <Button size="lg" variant="outline" className="text-lg px-8" href="https://t.me/virtelx">
+      Join 10+ early believers 🚀
+    </Button>
+  </div>
 </div>
+

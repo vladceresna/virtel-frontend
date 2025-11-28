@@ -42,7 +42,7 @@
 		class="relative flex flex flex-col items-center justify-center gap-1 border-b bg-primary bg-primary p-2 px-4 backdrop-blur supports-[backdrop-filter]:bg-primary md:flex-row md:px-6"
 	>
 		<h4 class="leading-0 font-bold text-white">
-			Meet Virtel Maple 3.4.x! New UI, Custom colors, PQCrypto and Fixes.
+			Meet Virtel 4 Alpha Larix! Rewrited to Rust. Faster. Unstable (WIP) (for testing).
 		</h4>
 		<Button href="/download" variant="outline" class="h-7 rounded-sm p-3">Download</Button>
 	</div>
