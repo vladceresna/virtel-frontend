@@ -39,7 +39,7 @@
 
 <div class="flex min-h-screen w-full flex-col font-inter">
 	<div
-		class="relative flex flex flex-col items-center justify-center gap-1 border-b bg-primary bg-primary p-2 px-4 backdrop-blur supports-[backdrop-filter]:bg-primary md:flex-row md:px-6"
+		class="relative flex flex-col items-center justify-center gap-1 border-b bg-primary p-2 px-4 backdrop-blur supports-backdrop-filter:bg-primary md:flex-row md:px-6"
 	>
 		<h4 class="leading-0 font-bold text-white">
 			Meet Virtel 4 Alpha Larix! Rewrited to Rust. Faster. Unstable (WIP) (for testing).
@@ -48,7 +48,7 @@
 	</div>
 	<div class="sticky top-0 z-50">
 		<header
-			class="sticky flex h-16 items-center gap-4 border-b bg-background bg-background/95 px-4 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:px-6"
+			class="sticky flex h-16 items-center gap-4 border-b bg-background/95 px-4 backdrop-blur supports-backdrop-filter:bg-background/60 md:px-6"
 		>
 			<nav
 				class="hidden flex-col gap-6 text-lg font-medium md:flex md:flex-row md:items-center md:gap-5 md:text-sm lg:gap-6"
@@ -113,29 +113,23 @@
 					</div>
 				</form>
 				<ModeToggle />
-				<!--
-		<DropdownMenu.Root>
-		  <DropdownMenu.Trigger asChild let:builder>
-			<Button
-			  builders={[builder]}
-			  variant="secondary"
-			  size="icon"
-			  class="rounded-full"
-			>
-			  <CircleUser class="h-5 w-5" />
-			  <span class="sr-only">Toggle user menu</span>
-			</Button>
-		  </DropdownMenu.Trigger>
-		  <DropdownMenu.Content align="end">
-			<DropdownMenu.Label>My Account</DropdownMenu.Label>
-			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Settings</DropdownMenu.Item>
-			<DropdownMenu.Item>Support</DropdownMenu.Item>
-			<DropdownMenu.Separator />
-			<DropdownMenu.Item>Logout</DropdownMenu.Item>
-		  </DropdownMenu.Content>
-		</DropdownMenu.Root>
-		-->
+
+				<!-- <DropdownMenu.Root>
+					<DropdownMenu.Trigger asChild let:builder>
+						<Button builders={[builder]} variant="secondary" size="icon" class="rounded-full">
+							<CircleUser class="h-5 w-5" />
+							<span class="sr-only">Toggle user menu</span>
+						</Button>
+					</DropdownMenu.Trigger>
+					<DropdownMenu.Content align="end">
+						<DropdownMenu.Label>My Account</DropdownMenu.Label>
+						<DropdownMenu.Separator />
+						<DropdownMenu.Item>Settings</DropdownMenu.Item>
+						<DropdownMenu.Item>Support</DropdownMenu.Item>
+						<DropdownMenu.Separator />
+						<DropdownMenu.Item>Logout</DropdownMenu.Item>
+					</DropdownMenu.Content>
+				</DropdownMenu.Root> -->
 			</div>
 		</header>
 	</div>
@@ -151,3 +145,5 @@
 		</p>
 	</footer>
 </div>
+
+<style lang="postcss">  @reference "tailwindcss";</style>
