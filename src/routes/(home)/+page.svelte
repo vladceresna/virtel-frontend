@@ -5,18 +5,18 @@
 	import * as Card from '$lib/components/ui/card';
 </script>
 
-<div class="m-auto h-fit w-8/12" aria-disabled="true">
-	<section aria-label="hero" class="grid grid-cols-2 grid-rows-1 gap-10">
-		<div class="flex flex-col gap-5" aria-disabled="true">
-			<Card.Card class="h-full">
+<div class="m-auto h-fit w-full md:w-8/12" aria-disabled="true">
+	<section aria-label="hero" class="grid grid-cols-1 grid-rows-2 2xl:grid-cols-2 2xl:grid-rows-1 gap-10">
+		<div class="flex flex-col gap-5 order-2 2xl:order-1" aria-disabled="true">
+			<Card.Card class="h-full w-full">
 				<Card.CardContent class="relative flex h-full flex-col gap-5">
-					<div class="flex flex-col gap-5 p-6">
+					<div class="flex flex-col gap-5 lg:p-6 p-3">
 						<h1
 							class="scroll-m-20 bg-linear-to-b from-primary to-muted-foreground/70 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent lg:text-5xl"
 						>
 							Virtel - Universal Box for Apps
 						</h1>
-						<h4 class=" scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground">
+						<h4 class=" scroll-m-20 text-md md:text-xl font-semibold tracking-tight text-muted-foreground">
 							Build full-fledged applications that run everywhere in a clean system.
 							<br />Work and websurf in really clean and vibe ecosystem.
 						</h4>
@@ -26,7 +26,7 @@
 						</div>
 					</div>
 
-					<Card.CardFooter class="absolute bottom-0 -ml-6 flex w-full flex-col items-start gap-5">
+					<Card.CardFooter class="relative bottom-0 -ml-6 flex w-full flex-col items-start gap-5">
 						<div class="flex flex-wrap gap-2">
 							<Button class="my-auto w-full font-bold md:w-auto" variant="outline" href="/about"
 								>Join us</Button
@@ -55,9 +55,9 @@
 				</Card.CardContent>
 			</Card.Card>
 		</div>
-		<div class="h-full">
+		<div class="h-full order-1 2xl:order-2">
 			<iframe
-				class="mx-10 w-full rounded-2xl border md:h-[30rem]"
+				class="w-full rounded-2xl border min-h-100 h-full"
 				src="https://www.youtube.com/embed/88I7QsRG0v8?si=t131GGXnhHGaqphF"
 				title="YouTube video player"
 				frameborder="0"
