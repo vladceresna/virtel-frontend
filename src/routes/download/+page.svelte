@@ -48,7 +48,7 @@
 
 <Alert.Root>
 	<Terminal class="h-4 w-4" />
-	<Alert.Title>Virtel now is in Alpha version</Alert.Title>
+	<Alert.Title>Virtel now is in Beta version</Alert.Title>
 	<Alert.Description>
 		Please use this with caution. This is OpenSource project with GNU GPLv3.0 License, and we
 		don&apos;t offer any guaranties of normal work this software. But you are welcome to test
@@ -59,36 +59,36 @@
 
 <div class="flex flex-col flex-wrap gap-5 pt-12 text-center">
 	<h2 class="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0">
-		Larix 4.0.0 Alpha
+		Larix 4.0.0 Beta
 	</h2>
 	<h4 class="scroll-m-20 text-xl font-semibold tracking-tight text-muted-foreground">
-		Rewritten to Rust! New architecture, better performance, new features.
+		Rewritten to Rust! New architecture, better performance, yet without features.
 		<br />
 		Very unstable version for testing purposes only.
 	</h4>
 </div>
 
 <div class="flex flex-col gap-5 md:flex-row">
-	<DownloadOption
-		url="https://github.com/vladceresna/virtel/releases/download/3.4.0-beta/com.vladceresna.virtel-3.4.0-windows.exe"
+	<!-- <DownloadOption
+		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-windows.exe"
 		os="Windows"
 		format="EXE"
 		version="4.0.0"
 		weight="77 MB"
-	/>
+	/> -->
 	<DownloadOption
-		url="https://github.com/vladceresna/virtel/releases/download/3.4.0-beta/com.vladceresna.virtel-3.4.0-linux.deb"
+		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-linux.sh"
 		os="Linux"
-		format="DEB"
+		format="SH"
 		version="4.0.0"
-		weight="78 MB"
+		weight="27 MB"
 	/>
 	<DownloadOption
-		url="https://github.com/vladceresna/virtel/releases/download/3.4.0-beta/com.vladceresna.virtel-3.4.0-android.apk"
+		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-android.apk"
 		os="Android"
 		format="APK"
 		version="4.0.0"
-		weight="34 MB"
+		weight="208 MB"
 	/>
 </div>
 
