@@ -69,13 +69,13 @@
 </div>
 
 <div class="flex flex-col gap-5 md:flex-row">
-	<!-- <DownloadOption
+	<DownloadOption
 		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-windows.exe"
 		os="Windows"
 		format="EXE"
 		version="4.0.0"
-		weight="77 MB"
-	/> -->
+		weight="20 MB"
+	/>
 	<DownloadOption
 		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-linux.sh"
 		os="Linux"
