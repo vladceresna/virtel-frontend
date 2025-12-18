@@ -1,0 +1,7 @@
+{
+  "id": "vladceresna.virtel.launcher",
+  "name": "Launcher",
+  "main_class": "LauncherApp",
+  "version": "0.1.0",
+  "icon_path": "@assets/icon.png"
+}
