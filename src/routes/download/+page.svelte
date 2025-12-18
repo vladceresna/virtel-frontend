@@ -68,6 +68,24 @@
 	</h4>
 </div>
 
+<Alert.Root>
+	<Terminal class="h-4 w-4" />
+	<Alert.Title>How to make it working?</Alert.Title>
+	<Alert.Description>
+		You need to download it, install, and run. Nextly, find this folder:<br />
+		on Android: /storage/emulated/0/Android/data/com.vladceresna.virtel/files/.virtel/0/sys/apps/vladceresna.virtel.launcher/<br
+		/>
+		on Linux: /home/(username)/.virtel/0/sys/apps/vladceresna.virtel.launcher/<br />
+		on Windows: C:\Users/(username)/.virtel/0/sys/apps/vladceresna.virtel.launcher/<br />
+		Nextly, add file "config.json", downloaded from
+		<a href="https://virtel.netlify.app/std-apps/4.0.0/vladceresna.virtel.launcher/config.json"
+			>this site</a
+		>
+		in this folder<br />
+		And it will work <a href="">as there</a>
+	</Alert.Description>
+</Alert.Root>
+
 <div class="flex flex-col gap-5 md:flex-row">
 	<DownloadOption
 		url="https://github.com/vladceresna/virtel/releases/download/4.0.0-beta/com.vladceresna.virtel-4.0.0-windows.exe"
