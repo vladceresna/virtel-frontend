@@ -82,7 +82,8 @@
 			>this site</a
 		>
 		in this folder<br />
-		And it will work <a href="https://virtel.netlify.app/">as there</a>
+		And it will work <a href="https://virtel.netlify.app/">as there</a> and
+		<a href="https://youtu.be/EjOg55EsRsk">there</a>
 	</Alert.Description>
 </Alert.Root>
 
