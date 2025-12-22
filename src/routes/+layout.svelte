@@ -70,6 +70,9 @@
 				<a href="/skills" class="text-muted-foreground transition-colors hover:text-foreground">
 					Skills
 				</a>
+				<a href="/wallpapers" class="text-muted-foreground transition-colors hover:text-foreground">
+					Wallpapers
+				</a>
 				<a href="/about" class="text-muted-foreground transition-colors hover:text-foreground">
 					About
 				</a>
@@ -91,6 +94,9 @@
 						<a href="/download" class="text-muted-foreground hover:text-foreground"> Download </a>
 						<a href="/docs" class="text-muted-foreground hover:text-foreground"> Docs </a>
 						<a href="/skills" class="text-muted-foreground hover:text-foreground"> Skills </a>
+						<a href="/wallpapers" class="text-muted-foreground hover:text-foreground">
+							Wallpapers
+						</a>
 						<a href="/about" class="text-muted-foreground hover:text-foreground"> About </a>
 					</nav>
 				</Sheet.Content>
