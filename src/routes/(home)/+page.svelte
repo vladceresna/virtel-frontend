@@ -164,12 +164,14 @@ class MyApp is VirtelApp {
 
 <div class="rounded-[4rem] bg-gradient-to-t from-background to-muted/30 py-32 text-center">
 	<h2 class="text-5xl font-black md:text-7xl">
-		A 18-year-old just cooked something<br />
+		A 17-year-old just cooked something<br />
 		corporations are scared of 🤯
 	</h2>
 	<p class="mt-8 text-2xl text-muted-foreground">Be part of it before it’s mainstream.</p>
 	<div class="mt-10 flex flex-wrap justify-center gap-6">
-		<Button size="lg" className="text-lg px-8" href="/download">Download Virtel Beta</Button>
+		<Button size="lg" className="text-lg px-8" href="https://github.com/vladceresna/virtel">
+			Star Virtel on GitHub ⭐
+		</Button>
 		<Button size="lg" variant="outline" className="text-lg px-8" href="https://t.me/virtelx">
 			Join 20+ early believers 🚀
 		</Button>
